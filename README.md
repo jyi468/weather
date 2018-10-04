@@ -1371,7 +1371,7 @@ Alternatively you may use `yarn`:
 yarn add --dev enzyme @types/enzyme enzyme-adapter-react-16 @types/enzyme-adapter-react-16 react-test-renderer @types/react-test-renderer
 ```
 
-#### `src/setupTests.ts`
+#### `src/setupTests.tsx`
 ```ts
 import * as Enzyme from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
@@ -1433,7 +1433,7 @@ Alternatively you may use `yarn`:
 yarn add jest-enzyme
 ```
 
-Import it in [`src/setupTests.ts`](#initializing-test-environment) to make its matchers available in every test:
+Import it in [`src/setupTests.tsx`](#initializing-test-environment) to make its matchers available in every test:
 
 ```js
 import 'jest-enzyme';
@@ -1456,11 +1456,11 @@ and then use them in your tests like you normally do.
 
 >Note: this feature is available with `react-scripts@0.4.0` and higher.
 
-If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.ts` to your project. It will be automatically executed before running your tests.
+If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.tsx` to your project. It will be automatically executed before running your tests.
 
 For example:
 
-#### `src/setupTests.ts`
+#### `src/setupTests.tsx`
 ```ts
 const localStorageMock = {
   getItem: jest.fn(),

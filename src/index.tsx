@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 //import App from './App';
-// import Hello from './components/Hello';
+// import App from './components/App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -10,7 +10,7 @@ import { enthusiasm } from './reducers/index';
 import { StoreState } from './types/index';
 import { EnthusiasmAction } from "./actions";
 
-import Hello from './containers/Hello';
+import Hello from './containers/App';
 import { Provider } from 'react-redux';
 
 const store = createStore<StoreState, EnthusiasmAction, null, null>(enthusiasm, {
@@ -27,7 +27,7 @@ ReactDOM.render(
 
 /*ReactDOM.render(
   //<App />,
-    <Hello name="TypeScript" enthusiasmLevel={10}/>,
+    <App name="TypeScript" enthusiasmLevel={10}/>,
   document.getElementById('root') as HTMLElement
 );*/
 registerServiceWorker();

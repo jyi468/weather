@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './Hello.css';
+import './App.css';
 
 export interface Props {
     name: string;
@@ -20,7 +20,7 @@ export interface Props {
  */
 
 // Container component and redux
-function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+function App({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
     if (enthusiasmLevel <= 0) {
         throw new Error('You could be a little more enthusiastic. :D');
     }
@@ -38,7 +38,7 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
     );
 }
 
-export default Hello;
+export default App;
 
 // helpers
 

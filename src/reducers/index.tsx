@@ -1,6 +1,6 @@
-import { EnthusiasmAction } from "../actions";
-import { StoreState } from '../types/index';
-import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from "../constants";
+import { EnthusiasmAction, WeatherAction } from "../actions";
+import { StoreState, WeatherState } from '../types/index';
+import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM, FETCH_WEATHER } from "../constants";
 
 export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
     switch (action.type) {
@@ -10,4 +10,11 @@ export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreSt
             return { ...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1)};
     }
     return state;
+}
+
+export function weather(state: WeatherState, action: WeatherAction): WeatherState {
+    switch (action.type) {
+        case FETCH_WEATHER:
+            return { ...state };
+    }
 }

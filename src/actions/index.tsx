@@ -24,3 +24,17 @@ export function decrementEnthusiasm(): DecrementEnthusiasm {
         type: constants.DECREMENT_ENTHUSIASM
     }
 }
+
+// Weather
+export interface FetchWeather{
+    type: constants.FETCH_WEATHER;
+    json: object;
+}
+export type WeatherAction = FetchWeather; // Add other weather actions here
+
+export function fetchWeather(json: object): FetchWeather {
+    return {
+        type: constants.FETCH_WEATHER,
+        json
+    };
+}

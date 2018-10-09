@@ -5,18 +5,30 @@ import * as ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { enthusiasm } from './reducers/index';
 import { StoreState } from './types/index';
 import { EnthusiasmAction } from "./actions";
 
 import Hello from './containers/App';
 import { Provider } from 'react-redux';
+import {default as thunk, ThunkMiddleware} from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 
-const store = createStore<StoreState, EnthusiasmAction, null, null>(enthusiasm, {
+const loggerMiddleware = createLogger();
+
+/*const store = createStore<StoreState, EnthusiasmAction, null, null>(enthusiasm, {
     enthusiasmLevel: 1,
     languageName: 'TypeScript',
-});
+});*/
+const store = createStore(
+    enthusiasm,
+    {
+        enthusiasmLevel: 1,
+        languageName: 'TypeScript',
+    },
+    applyMiddleware(thunk as ThunkMiddleware<StoreState, EnthusiasmAction>, loggerMiddleware)
+);
 
 ReactDOM.render(
     <Provider store={store}>

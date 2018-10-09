@@ -39,5 +39,6 @@ export enum Weather {
     FewClouds,
     // Rain
     LightRain,
-    ModerateRain
+    ModerateRain,
+    HeavyRain
 }

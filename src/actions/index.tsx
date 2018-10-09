@@ -1,4 +1,5 @@
-import * as constants from '../constants'
+import * as constants from '../constants';
+import { Dispatch } from 'redux';
 
 // Create types for increment and decrement actions
 export interface IncrementEnthusiasm {
@@ -26,15 +27,26 @@ export function decrementEnthusiasm(): DecrementEnthusiasm {
 }
 
 // Weather
-export interface FetchWeather{
-    type: constants.FETCH_WEATHER;
-    json: object;
-}
-export type WeatherAction = FetchWeather; // Add other weather actions here
 
-export function fetchWeather(json: object): FetchWeather {
-    return {
-        type: constants.FETCH_WEATHER,
-        json
-    };
+export interface ReceiveWeather {
+    type: constants.RECEIVE_WEATHER
+}
+
+export type WeatherAction = FetchWeather | ReceiveWeather; // Add other weather actions here
+
+export interface FetchWeather {
+    type: constants.FETCH_WEATHER;
+    (dispatch: Dispatch): object;
+}
+
+export function receiveWeather(json: object): ReceiveWeather {
+    return {...json, type: constants.RECEIVE_WEATHER} ;
+}
+
+export function fetchWeather() {
+    return (dispatch: Dispatch) => {
+        return fetch("../resources/mountain-view.json")
+            .then(response => response.json())
+            .then(json => dispatch(receiveWeather(json)))
+    }
 }

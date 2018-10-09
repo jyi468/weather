@@ -1,12 +1,8 @@
 import * as React from 'react';
+//import * as actions from '../actions';
+//import { Dispatch } from 'redux';
 import './App.css';
-
-export interface Props {
-    name: string;
-    enthusiasmLevel?: number; // optional number type
-    onIncrement?: () => void;
-    onDecrement?: () => void;
-}
+import { WeatherState } from "../types";
 
 
 /**
@@ -20,13 +16,24 @@ export interface Props {
  */
 
 // Container component and redux
-function App({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
-    if (enthusiasmLevel <= 0) {
-        throw new Error('You could be a little more enthusiastic. :D');
-    }
+function App({ city, scale, currentForecast, forecasts }: WeatherState) {
 
     return (
         <div className="hello">
+            <div className="greeting">
+                {/*{city.toString() + " " + scale.toString() + " " + currentForecast.toString() +
+                " " + forecasts.toString()}*/}
+                Hello
+            </div>
+        </div>
+    );
+}
+
+/*export class App extends React.Component<Props, WeatherState> {
+    render() {
+        const { city, scale, currentForecast, forecasts } = this.props;
+        return (
+            <div className="hello">
             <div className="greeting">
                 Hello {name + getExclamationMarks(enthusiasmLevel)}
             </div>
@@ -35,8 +42,9 @@ function App({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
                 <button onClick={onIncrement}>+</button>
             </div>
         </div>
-    );
-}
+        );
+    }
+}*/
 
 export default App;
 
@@ -46,9 +54,9 @@ export default App;
  *
  * @param {number} numChars - optional numbe r parameter
  * @returns {string}
- */
+ *//*
 function getExclamationMarks(numChars: number) {
     return Array(numChars + 1).join('!');
-}
+}*/
 
 

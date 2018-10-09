@@ -1,6 +1,6 @@
 import { EnthusiasmAction, WeatherAction } from "../actions";
-import { StoreState, WeatherState } from '../types/index';
-import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM, FETCH_WEATHER } from "../constants";
+import { StoreState, WeatherState } from '../types';
+import {INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM, RECEIVE_WEATHER} from "../constants";
 
 export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
     switch (action.type) {
@@ -14,7 +14,8 @@ export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreSt
 
 export function weather(state: WeatherState, action: WeatherAction): WeatherState {
     switch (action.type) {
-        case FETCH_WEATHER:
+        case RECEIVE_WEATHER:
             return { ...state };
     }
+    return state;
 }

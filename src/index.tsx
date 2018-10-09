@@ -6,8 +6,8 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import { createStore, applyMiddleware, Action } from 'redux';
-import { enthusiasm } from './reducers/index';
-import { WeatherState } from './types/index';
+import { weather } from './reducers';
+import { WeatherState } from './types';
 //import { WeatherAction } from "./actions";
 
 import App from './containers/App';
@@ -22,11 +22,8 @@ const loggerMiddleware = createLogger();
     languageName: 'TypeScript',
 });*/
 const store = createStore(
-    enthusiasm,
-    {
-        enthusiasmLevel: 1,
-        languageName: 'TypeScript',
-    },
+    weather,
+    {},
     applyMiddleware(thunk as ThunkMiddleware<WeatherState, Action>, loggerMiddleware)
 );
 

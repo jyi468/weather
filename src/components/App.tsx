@@ -2,8 +2,7 @@ import * as React from 'react';
 //import * as actions from '../actions';
 //import { Dispatch } from 'redux';
 import './App.css';
-import { WeatherState } from "../types";
-
+import { WeatherState } from "../types/types";
 
 /**
  * Functional component that gives name and exclamation marks depending on enthusiasm level.
@@ -16,8 +15,10 @@ import { WeatherState } from "../types";
  */
 
 // Container component and redux
-function App({ city, scale, currentForecast, forecasts }: WeatherState) {
-
+function App({ city, scale, currentForecast, forecasts, fetchWeather }: WeatherState) {
+    if (fetchWeather) {
+        fetchWeather();
+    }
     return (
         <div className="hello">
             <div className="greeting">

@@ -1,4 +1,4 @@
-{
+export const data = {
   "cod": "200",
   "message": 0.0122,
   "cnt": 40,

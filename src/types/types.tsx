@@ -1,14 +1,10 @@
-export interface StoreState {
-    languageName: string; // programming language app was written in
-    enthusiasmLevel: number; // varies
-}
-
 export interface WeatherState {
     city: string;
     scale: TempScale
     currentForecast: Forecast;
     // Forecasts are in 3 hour increments
     forecasts: Forecast[];
+    fetchWeather: () => object;
 }
 
 // Each forecast is 3 hours of weather

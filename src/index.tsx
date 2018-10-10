@@ -6,8 +6,8 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import { createStore, applyMiddleware, Action } from 'redux';
-import { weather } from './reducers';
-import { WeatherState } from './types';
+import { weather } from './reducers/reducers';
+import { WeatherState } from './types/types';
 //import { WeatherAction } from "./actions";
 
 import App from './containers/App';

@@ -1,6 +1,6 @@
 import App from '../components/App';
-import * as actions from '../actions';
-import { WeatherState } from '../types/index';
+import * as actions from '../actions/actions';
+import { WeatherState } from '../types/types';
 import { Action } from 'redux';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk'
@@ -21,7 +21,8 @@ export function mapStateToProps({ city, scale, forecasts, currentForecast }: Wea
 export function mapDispatchToProps(dispatch: ThunkDispatch<WeatherState, void, Action>) {
     return {
         // Add function for fetch using dispatch
-        fetchWeather: () => dispatch(actions.fetchWeather())
+        fetchWeather: () => dispatch(actions.fetchWeather()),
+        //fetchWeatherMock: () => dispatch(actions.fetchWeatherMock())
     }
 }
 

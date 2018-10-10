@@ -4,6 +4,7 @@ export interface WeatherState {
     scale: TempScale
     // Forecasts are in 3 hour increments
     forecasts: Forecast[];
+    current: number;
     fetchWeather?: () => object;
 }
 
@@ -29,13 +30,13 @@ export enum TempScale {
 }
 
 export enum Weather {
-    ClearSky,
+    ClearSky = 'wi-day-sunny',
     // Clouds
-    BrokenClouds,
-    ScatteredClouds,
-    FewClouds,
+    BrokenClouds = 'wi-day-cloudy',
+    ScatteredClouds = 'wi-day-cloudy',
+    FewClouds = 'wi-day-cloudy',
     // Rain
-    LightRain,
-    ModerateRain,
-    HeavyRain
+    LightRain = 'wi-day-showers',
+    ModerateRain = 'wi-day-rain',
+    HeavyRain = 'wi-day-rain'
 }

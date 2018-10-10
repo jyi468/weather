@@ -3,7 +3,7 @@ import * as actions from '../actions/actions';
 import { WeatherState } from '../types/types';
 import { Action } from 'redux';
 import { connect } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk'
+import { ThunkDispatch } from 'redux-thunk';
 //import { Dispatch } from 'redux';
 
 // We will use connect function that will take original App component and turn it into a container using

@@ -11,7 +11,7 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
 
             return Object.assign({}, state, {
                 city: json.city.name,
-                country: json.country,
+                country: json.city.country,
                 scale: TempScale.F,
                 forecasts: json.list.map((day: any) => {
                     return {

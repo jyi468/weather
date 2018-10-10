@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {TempScale, Weather} from '../types/types';
+import { WeatherMain } from './weatherMain/WeatherMain';
 //import * as actions from '../actions';
 //import { Dispatch } from 'redux';
 import './App.css';
@@ -36,6 +37,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
         city: "",
         country: "",
         scale: TempScale.F,
+        current: 0,
         forecasts: [{
             time: 0,
             weather: Weather.ClearSky,
@@ -60,12 +62,24 @@ export class App extends React.Component<WeatherState, WeatherState> {
     }
 
     render() {
-        const {city, country, scale, forecasts } = this.props;
-        return (<div className="hello">
-                <div className="greeting">
-                    {city.toString() + ", " + country.toString() + " "
-                    + scale.toString() + " " + JSON.stringify(forecasts[0])}
+        const { city, country, scale, forecasts, current } = this.props;
+        let currentForecast = forecasts[current];
+
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12">
+                        <WeatherMain
+                            country={country}
+                            city={city}
+                            scale={scale}
+                            weather={currentForecast.weather}
+                            time={currentForecast.time}
+                            temperature={currentForecast.temperature}
+                        />
+                    </div>
                 </div>
+
             </div>
         );
     }

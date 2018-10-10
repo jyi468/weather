@@ -2,9 +2,8 @@ export interface WeatherState {
     city: string;
     country: string;
     scale: TempScale
-    currentForecast?: Forecast;
     // Forecasts are in 3 hour increments
-    forecasts?: Forecast[];
+    forecasts: Forecast[];
     fetchWeather?: () => object;
 }
 

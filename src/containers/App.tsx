@@ -10,9 +10,9 @@ import { ThunkDispatch } from 'redux-thunk'
 // mapStateToProps - changes the data from current store to to shape our component needs - mapper
 // mapDispatchToProps - creates callback props to pump actions to our store using a given dispatch function
 
-export function mapStateToProps({ city, scale, forecasts, currentForecast }: WeatherState) {
+export function mapStateToProps({ city, country, scale, forecasts }: WeatherState) {
     return {
-        city, scale, forecasts, currentForecast
+        city, country, scale, forecasts
     }
 }
 

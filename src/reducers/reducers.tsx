@@ -1,5 +1,5 @@
 import { WeatherAction } from "../actions/actions";
-import { WeatherState, TempScale, Weather, Forecast } from '../types/types';
+import { WeatherState, TempScale, Weather } from '../types/types';
 import { RECEIVE_WEATHER } from "../constants/constants";
 
 export function weather(state: WeatherState, action: WeatherAction): WeatherState {
@@ -9,24 +9,20 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
             //return { ...state };
             const json = action.json;
 
-            // Map list into Forecast objects
-            const forecasts: Forecast[] = json.list.map((day: any) => {
-                return {
-                    time: day.dt,
-                    weather: getWeather(day.weather[0].description),
-                    temperature: day.main.temp,
-                    humidity: day.main.humidity,
-                    precipitation: day.rain ? day.rain['3h'] : 0,
-                    wind: day.wind
-                };
-            });
-
             return Object.assign({}, state, {
                 city: json.city.name,
                 country: json.country,
                 scale: TempScale.F,
-                forecasts: forecasts,
-                currentForecast: forecasts[0]
+                forecasts: json.list.map((day: any) => {
+                    return {
+                        time: day.dt,
+                        weather: getWeather(day.weather[0].description),
+                        temperature: day.main.temp,
+                        humidity: day.main.humidity,
+                        precipitation: day.rain ? day.rain['3h'] : 0,
+                        wind: day.wind
+                    };
+                }),
             });
         default:
             return state;

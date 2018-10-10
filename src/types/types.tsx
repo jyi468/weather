@@ -1,10 +1,11 @@
 export interface WeatherState {
     city: string;
+    country: string;
     scale: TempScale
-    currentForecast: Forecast;
+    currentForecast?: Forecast;
     // Forecasts are in 3 hour increments
-    forecasts: Forecast[];
-    fetchWeather: () => object;
+    forecasts?: Forecast[];
+    fetchWeather?: () => object;
 }
 
 // Each forecast is 3 hours of weather
@@ -23,6 +24,7 @@ export interface Wind {
 }
 
 export enum TempScale {
+    K, // API sends kelvin by default
     C,
     F
 }

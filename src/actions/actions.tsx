@@ -4,7 +4,9 @@ import { data } from '../resources/mountain-view';
 // Weather
 
 export interface ReceiveWeather {
-    type: constants.RECEIVE_WEATHER
+    type: constants.RECEIVE_WEATHER;
+    // TODO: Define json receive structure
+    json: any;
 }
 
 export type WeatherAction = FetchWeather | ReceiveWeather; // Add other weather actions here
@@ -14,8 +16,12 @@ export interface FetchWeather {
     (dispatch: Dispatch): object;
 }
 
+// Parse and transform data
 export function receiveWeather(json: object): ReceiveWeather {
-    return {...json, type: constants.RECEIVE_WEATHER} ;
+    return {
+        json: json,
+        type: constants.RECEIVE_WEATHER
+    } ;
 }
 
 export function fetchWeather() {

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { TempScale } from '../types/types';
 //import * as actions from '../actions';
 //import { Dispatch } from 'redux';
 import './App.css';
@@ -15,37 +16,48 @@ import { WeatherState } from "../types/types";
  */
 
 // Container component and redux
-function App({ city, scale, currentForecast, forecasts, fetchWeather }: WeatherState) {
+/*function App({ city, scale, currentForecast, forecasts, fetchWeather }: WeatherState) {
     if (fetchWeather) {
         fetchWeather();
     }
     return (
         <div className="hello">
             <div className="greeting">
-                {/*{city.toString() + " " + scale.toString() + " " + currentForecast.toString() +
-                " " + forecasts.toString()}*/}
+                {/!*{city.toString() + " " + scale.toString() + " " + currentForecast.toString() +
+                " " + forecasts.toString()}*!/}
                 Hello
             </div>
         </div>
     );
-}
+}*/
+export class App extends React.Component<WeatherState, WeatherState> {
 
-/*export class App extends React.Component<Props, WeatherState> {
+    static defaultProps: WeatherState = {
+        city: "",
+        country: "",
+        scale: TempScale.F
+    };
+
+    constructor(props: WeatherState) {
+        super(props);
+    }
+
+    componentDidMount() {
+        if (this.props.fetchWeather) {
+            this.props.fetchWeather();
+        }
+    }
+
     render() {
-        const { city, scale, currentForecast, forecasts } = this.props;
-        return (
-            <div className="hello">
-            <div className="greeting">
-                Hello {name + getExclamationMarks(enthusiasmLevel)}
+        const { city, scale } = this.props;
+        return (<div className="hello">
+                <div className="greeting">
+                    {city.toString() + " " + scale.toString()}
+                </div>
             </div>
-            <div>
-                <button onClick={onDecrement}>-</button>
-                <button onClick={onIncrement}>+</button>
-            </div>
-        </div>
         );
     }
-}*/
+}
 
 export default App;
 

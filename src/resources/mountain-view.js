@@ -1366,4 +1366,4 @@ export const data = {
     },
     "country": "US"
   }
-}
+};

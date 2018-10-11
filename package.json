@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/chart.js": "^2.7.37",
     "@types/react-redux": "^6.0.9",
     "@types/redux-logger": "^3.0.6",
     "bootstrap": "^4.1.3",

@@ -57,8 +57,16 @@ export class App extends React.Component<WeatherState, WeatherState> {
 
     render() {
         const {city, country, scale, days, dayIndex, hourIndex} = this.props;
-        let currentForecast = days[dayIndex].hours[hourIndex];
+        let currentDay = days[dayIndex];
+        let currentForecast = currentDay.hours[hourIndex];
+        let x = 0;
+        let temps = currentDay.hours.map((forecast: any) => {
+            let pair =  [x, forecast.temperature];
+            x += 128;
+            return pair;
+        });
 
+        // Transform hours to points for graph.
         return (
             <div className="container">
                 <h1>Weather</h1>
@@ -76,7 +84,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
                 </div>
                 <div className="row">
                     <div className="col-sm-12">
-                        <WeatherChart/>
+                        <WeatherChart points={temps}/>
                     </div>
                 </div>
                 <div className="row">

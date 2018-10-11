@@ -7,18 +7,6 @@ export interface ChartProps {
 
 export const WeatherChart: React.SFC<ChartProps> = (props) => {
     let { points } = props;
-    /*let polyline = "";
-    let chart = document.getElementById('weather-chart');
-    if (chart) {
-
-        if (points) {
-            points.forEach((point) => {
-                polyline += point.toString() + " ";
-            });
-            chart.setAttribute('points', polyline);
-        }
-    }*/
-
     let ctx = document.getElementById("myChart") as HTMLCanvasElement;
 
     if (ctx) {

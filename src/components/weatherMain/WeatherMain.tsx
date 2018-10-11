@@ -16,9 +16,11 @@ export const WeatherMain: React.SFC<WeatherMainProps> = (props) => {
 
     return (
         <div className="card">
-            <div className="card-body">
+            <div className="card-header">
                 <h5 className="card-title">{city + ', ' + country}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{formatDate(time)}</h6>
+            </div>
+            <div className="card-body">
                 <h1 className="card-text main-weather">
                     <i className={'wi ' + getIconName(weather)}></i> {WeatherUtils.getTemperature(temperature, scale, true)}
                 </h1>

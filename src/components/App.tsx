@@ -74,19 +74,23 @@ export class App extends React.Component<WeatherState, WeatherState> {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-2">
-                        {
-                            days.map((day, idx) => (<WeatherDay
-                                    dow={day.dow}
-                                    hi={day.hi}
-                                    lo={day.lo}
-                                    scale={scale}
-                                    weather={day.weather}
-                                    isCurrentDay={idx === dayIndex}
-                                />)
+
+                    {
+                        days.map((day, idx) => (
+                                <div className="col-sm-2">
+                                    <WeatherDay
+                                        key={idx}
+                                        dow={day.dow}
+                                        hi={day.hi}
+                                        lo={day.lo}
+                                        scale={scale}
+                                        weather={day.weather}
+                                        isCurrentDay={idx === dayIndex}
+                                    />
+                                </div>
                             )
-                        }
-                    </div>
+                        )
+                    }
                 </div>
             </div>
         );

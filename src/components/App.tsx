@@ -77,7 +77,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
                         <h1>Weather</h1>
                     </div>
                 </div>
-                <div className="row mb-5">
+                <div className="row mb-3">
                     <div className="col-sm-5 offset-sm-1">
                         <WeatherMain
                             country={country}
@@ -90,7 +90,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-10 offset-sm-1">
+                    <div className="col-sm-10 offset-sm-1 mb-3">
                         <WeatherChart points={temps}/>
                     </div>
                 </div>

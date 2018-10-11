@@ -62,6 +62,11 @@ export const WeatherChart: React.SFC<ChartProps> = (props) => {
     }
 
     return (
-        <canvas id="myChart" width="400" height="75"></canvas>
+        <div className="card p-3">
+            <div className="card-img-top">
+                <canvas id="myChart" width="400" height="75"></canvas>
+            </div>
+        </div>
+
     );
 };

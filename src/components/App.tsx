@@ -17,38 +17,30 @@ import {WeatherState} from "../types/types";
  * @constructor
  */
 
-// Container component and redux
-/*function App({ city, scale, currentForecast, forecasts, fetchWeather }: WeatherState) {
-    if (fetchWeather) {
-        fetchWeather();
-    }
-    return (
-        <div className="hello">
-            <div className="greeting">
-                {/!*{city.toString() + " " + scale.toString() + " " + currentForecast.toString() +
-                " " + forecasts.toString()}*!/}
-                Hello
-            </div>
-        </div>
-    );
-}*/
 export class App extends React.Component<WeatherState, WeatherState> {
 
     static defaultProps: WeatherState = {
         city: "",
         country: "",
         scale: TempScale.F,
-        current: 0,
-        forecasts: [{
-            time: 0,
+        dayIndex: 0,
+        hourIndex: 0,
+        days: [{
             weather: Weather.ClearSky,
-            temperature: 0,
-            humidity: 0,
-            precipitation: 0,
-            wind: {
-                deg: 0,
-                speed: 0
-            }
+            dow: 0,
+            hi: 0,
+            lo: 0,
+            hours: [{
+                time: 0,
+                weather: Weather.ClearSky,
+                temperature: 0,
+                humidity: 0,
+                precipitation: 0,
+                wind: {
+                    deg: 0,
+                    speed: 0
+                }
+            }]
         }]
     };
 
@@ -63,13 +55,13 @@ export class App extends React.Component<WeatherState, WeatherState> {
     }
 
     render() {
-        const {city, country, scale, forecasts, current} = this.props;
-        let currentForecast = forecasts[current];
+        const {city, country, scale, days, dayIndex, hourIndex} = this.props;
+        let currentForecast = days[dayIndex].hours[hourIndex];
 
         return (
             <div className="container">
                 <h1>Weather</h1>
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-sm-6">
                         <WeatherMain
                             country={country}
@@ -82,10 +74,17 @@ export class App extends React.Component<WeatherState, WeatherState> {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-6">
-                        <div className="card">
-                            <WeatherDay/>
-                        </div>
+                    <div className="col-sm-2">
+                        {
+                            days.map((day, idx) => (<WeatherDay
+                                    dow={day.dow}
+                                    hi={day.hi}
+                                    lo={day.lo}
+                                    weather={day.weather}
+                                    isCurrentDay={idx === dayIndex}
+                                />)
+                            )
+                        }
                     </div>
                 </div>
             </div>
@@ -94,17 +93,3 @@ export class App extends React.Component<WeatherState, WeatherState> {
 }
 
 export default App;
-
-// helpers
-
-/**
- *
- * @param {number} numChars - optional numbe r parameter
- * @returns {string}
- */
-/*
-function getExclamationMarks(numChars: number) {
-    return Array(numChars + 1).join('!');
-}*/
-
-

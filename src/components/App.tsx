@@ -6,6 +6,7 @@ import {WeatherDay} from './weatherDay/WeatherDay';
 //import { Dispatch } from 'redux';
 import './App.css';
 import {WeatherState} from "../types/types";
+import {WeatherChart} from "./weatherChart/WeatherChart";
 
 /**
  * Functional component that gives name and exclamation marks depending on enthusiasm level.
@@ -71,6 +72,11 @@ export class App extends React.Component<WeatherState, WeatherState> {
                             time={currentForecast.time}
                             temperature={currentForecast.temperature}
                         />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-sm-12">
+                        <WeatherChart/>
                     </div>
                 </div>
                 <div className="row">

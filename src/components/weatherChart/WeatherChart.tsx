@@ -6,7 +6,7 @@ export interface ChartProps {
 }
 
 export const WeatherChart: React.SFC<ChartProps> = (props) => {
-    //let { points } = props;
+    let { points } = props;
     /*let polyline = "";
     let chart = document.getElementById('weather-chart');
     if (chart) {
@@ -23,36 +23,35 @@ export const WeatherChart: React.SFC<ChartProps> = (props) => {
 
     if (ctx) {
         const myChart: Chart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: ['2 AM', '5 AM', '8 AM', '11 AM', '2 PM', '5 PM', '8 PM', '11 PM'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
+                    label: 'Temperature',
+                    data: points,
+                    borderColor: '#FFCB34',
+                    borderWidth: 2,
+                    backgroundColor: '#FFF5D6'
                 }]
             },
             options: {
+                legend: {
+                    display: false
+                },
                 scales: {
+                    xAxes: [{
+                        gridLines: {
+                            drawBorder: false,
+                            display: false
+                        }
+                    }],
                     yAxes: [{
+                        gridLines: {
+                            drawBorder: false,
+                            display: false
+                        },
                         ticks: {
-                            beginAtZero:true
+                            display: false
                         }
                     }]
                 }
@@ -63,6 +62,6 @@ export const WeatherChart: React.SFC<ChartProps> = (props) => {
     }
 
     return (
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <canvas id="myChart" width="400" height="75"></canvas>
     );
 };

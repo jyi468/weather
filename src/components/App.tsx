@@ -2,21 +2,9 @@ import * as React from 'react';
 import {TempScale, Weather} from '../types/types';
 import {WeatherMain} from './weatherMain/WeatherMain';
 import {WeatherDay} from './weatherDay/WeatherDay';
-//import * as actions from '../actions';
-//import { Dispatch } from 'redux';
 import './App.css';
 import {WeatherState} from "../types/types";
 import {WeatherChart} from "./weatherChart/WeatherChart";
-
-/**
- * Functional component that gives name and exclamation marks depending on enthusiasm level.
- * The function takes in arguments of type Props
- *
- * @param {string} name
- * @param {number} enthusiasmLevel - optional parameter that defaults to 1
- * @returns {any}
- * @constructor
- */
 
 export class App extends React.Component<WeatherState, WeatherState> {
 
@@ -96,23 +84,19 @@ export class App extends React.Component<WeatherState, WeatherState> {
                 </div>
                 <div className="row">
                     <div className="col-sm-1"/>
-
-                    {
-                        days.map((day, idx) => (
-                                <div className="col-sm-2">
-                                    <WeatherDay
-                                        key={idx}
-                                        dow={day.dow}
-                                        hi={day.hi}
-                                        lo={day.lo}
-                                        scale={scale}
-                                        weather={day.weather}
-                                        isCurrentDay={idx === dayIndex}
-                                    />
-                                </div>
-                            )
-                        )
-                    }
+                    {days.map((day, idx) => (
+                        <div className="col-sm-2">
+                            <WeatherDay
+                                key={idx}
+                                dow={day.dow}
+                                hi={day.hi}
+                                lo={day.lo}
+                                scale={scale}
+                                weather={day.weather}
+                                isCurrentDay={idx === dayIndex}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         );

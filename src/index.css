@@ -6,3 +6,7 @@ body {
 .wi {
   color: #924da3;
 }
+.main-weather{
+  margin-top: 25px;
+  font-size: 100px;
+}

@@ -1,14 +1,14 @@
 import {TempScale} from "./types/types";
 
 export default class WeatherUtils {
-    static getTemperature(temp: number, scale: TempScale) : string {
+    static getTemperature(temp: number, scale: TempScale, showScale: boolean = false) : string {
         switch (scale) {
             case TempScale.F:
-                return Math.round(temp * 9/5 - 459.67) + " F°";
+                return Math.round(temp * 9/5 - 459.67) + (showScale ? " F°" : "");
             case TempScale.C:
-                return Math.round(temp - 273.15) + " C°";
+                return Math.round(temp - 273.15) + (showScale ? " C°" : "");
             default:
-                return temp.toString();
+                return temp.toString() + (showScale ? " K" : "");
         }
     }
 

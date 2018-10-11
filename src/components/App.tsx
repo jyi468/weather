@@ -28,12 +28,12 @@ export class App extends React.Component<WeatherState, WeatherState> {
         days: [{
             weather: Weather.ClearSky,
             dow: 0,
-            hi: 0,
-            lo: 0,
+            hi: 276.15,
+            lo: 273.15,
             hours: [{
                 time: 0,
                 weather: Weather.ClearSky,
-                temperature: 0,
+                temperature: 275.15,
                 humidity: 0,
                 precipitation: 0,
                 wind: {
@@ -80,6 +80,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
                                     dow={day.dow}
                                     hi={day.hi}
                                     lo={day.lo}
+                                    scale={scale}
                                     weather={day.weather}
                                     isCurrentDay={idx === dayIndex}
                                 />)

@@ -1,17 +1,18 @@
 import * as React from 'react';
-import {Weather} from "../../types/types";
+import {TempScale, Weather} from "../../types/types";
 import WeatherUtils from "../../WeatherUtils";
 
 export interface WeatherDayProps {
     dow: number;
     weather: Weather;
+    scale: TempScale;
     hi: number;
     lo: number;
     isCurrentDay: boolean;
 }
 
 export const WeatherDay: React.SFC<WeatherDayProps> = (props) => {
-    let {dow, weather, hi, lo, isCurrentDay} = props;
+    let {dow, weather, hi, lo, isCurrentDay, scale} = props;
     return (
         <div className={"card" + isCurrentDay ? " border-primary" : ""}>
             <div className="card-header">
@@ -21,7 +22,7 @@ export const WeatherDay: React.SFC<WeatherDayProps> = (props) => {
                 <h1 className="card-text">
                     <i className={'wi ' + weather}></i>
                 </h1>
-                <h6>{hi}</h6> <h6 className="font-weight-light">{lo}</h6>
+                <h6><strong>{WeatherUtils.getTemperature(hi, scale)}</strong> {WeatherUtils.getTemperature(lo, scale)}</h6>
             </div>
         </div>
     );

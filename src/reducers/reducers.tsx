@@ -6,12 +6,13 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
     switch (action.type) {
         // Need to change action data into state
         case RECEIVE_WEATHER:
-            //return { ...state };
             const json = action.json;
             let hi = 0;
             let lo = Infinity;
             let importance = 0;
             return Object.assign({}, state, {
+                dayIndex: 0,
+                hourIndex: 0,
                 city: json.city.name,
                 country: json.city.country,
                 scale: TempScale.F,
@@ -59,7 +60,7 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
                 }, [])
             });
         case CHANGE_DAY:
-            return { ...state, dayIndex: action.dayIndex};
+            return {...state, dayIndex: action.dayIndex};
         default:
             return state;
     }

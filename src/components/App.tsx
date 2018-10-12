@@ -80,16 +80,6 @@ export class App extends React.Component<WeatherState, WeatherState> {
                     <div className="col-sm-1"/>
                     {days.map((day, idx) => (
                         <div className="col-sm-2">
-                            {/*<WeatherDay
-                                key={idx}
-                                dow={day.dow}
-                                hi={day.hi}
-                                lo={day.lo}
-                                scale={scale}
-                                weather={day.weather}
-                                onDayClick={this.onDayClick}
-                                isCurrentDay={idx === dayIndex}
-                            />*/}
                             <WeatherDayContainer
                                 key={idx}
                                 day={day}

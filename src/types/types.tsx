@@ -34,9 +34,9 @@ export interface Wind {
 }
 
 export enum TempScale {
-    K, // API sends kelvin by default
-    C,
-    F
+    K = 'K', // API sends kelvin by default
+    C = 'C°',
+    F = 'F°'
 }
 
 export enum Weather {

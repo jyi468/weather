@@ -5,6 +5,7 @@ import './App.css';
 import {WeatherState} from "../types/types";
 import {WeatherChart} from "./weatherChart/WeatherChart";
 import WeatherDayContainer from "../containers/WeatherDayContainer";
+import WeatherUtils from "../WeatherUtils";
 
 export class App extends React.Component<WeatherState, WeatherState> {
 
@@ -49,7 +50,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
         let currentForecast = currentDay.hours[hourIndex];
 
         let temps = currentDay.hours.map((forecast: any) => {
-            return forecast.temperature;
+            return WeatherUtils.getTemperature(forecast.temperature, scale);
         });
         // Transform hours to points for graph.
         return (
@@ -73,7 +74,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
                 </div>
                 <div className="row">
                     <div className="col-sm-10 offset-sm-1 mb-3">
-                        <WeatherChart points={temps}/>
+                        <WeatherChart points={temps} scale={scale}/>
                     </div>
                 </div>
                 <div className="row">

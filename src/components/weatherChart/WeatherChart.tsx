@@ -1,15 +1,18 @@
 import * as React from "react";
 import { Chart } from 'chart.js';
+import {TempScale} from "../../types/types";
 
 export interface ChartProps {
     points: any[]
+    scale: TempScale;
 }
 
 export const WeatherChart: React.SFC<ChartProps> = (props) => {
-    let { points } = props;
+    let { points, scale } = props;
     let ctx = document.getElementById("myChart") as HTMLCanvasElement;
 
     if (ctx) {
+        //let progress = document.getElementById('animationProgress');
         const myChart: Chart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -42,6 +45,11 @@ export const WeatherChart: React.SFC<ChartProps> = (props) => {
                             display: false
                         }
                     }]
+                },
+                tooltips: {
+                    callbacks: {
+                        label: (item) => `${item.yLabel} ${scale}`
+                    }
                 }
             }
         });

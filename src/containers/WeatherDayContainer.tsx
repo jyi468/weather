@@ -1,29 +1,40 @@
-import App from '../components/App';
 import * as actions from '../actions/actions';
-import { WeatherState } from '../types/types';
+import {Day, WeatherState} from '../types/types';
 import { Action } from 'redux';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
+import {WeatherDay} from "../components/weatherDay/WeatherDay";
 //import { Dispatch } from 'redux';
 
 // We will use connect function that will take original App component and turn it into a container using
 // mapStateToProps - changes the data from current store to to shape our component needs - mapper
 // mapDispatchToProps - creates callback props to pump actions to our store using a given dispatch function
 
-export function mapStateToProps({ city, country, scale, days }: WeatherState) {
+export interface DayContainer {
+    index: number;
+    day: Day;
+}
+
+export function mapStateToProps({ scale, dayIndex }: WeatherState, { index, day }: DayContainer) {
     return {
-        city, country, scale, days
-    }
+        index,
+        dow: day.dow,
+        hi: day.hi,
+        lo: day.lo,
+        weather: day.weather,
+        scale: scale,
+        isCurrentDay: index === dayIndex
+    };
 }
 
 // Takes in a dispatcher function. Dispatcher functions can pass actions to our store for updates
 // Create callbacks that will call the dispatcher as necessary
-export function mapDispatchToProps(dispatch: ThunkDispatch<WeatherState, void, Action>) {
+export function mapDispatchToProps(dispatch: ThunkDispatch<WeatherState, void, Action>, { index }: DayContainer) {
     return {
-        // Add function for fetch using dispatch
-        fetchWeather: () => dispatch(actions.fetchWeather()),
+        // Change day index
+        selectCurrentDay: () => dispatch(actions.changeDay(index)),
     }
 }
 
 // Connect will take mapStateToProps amd mapDispatchToProps and return another function we can use to wrap our component
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(WeatherDay);

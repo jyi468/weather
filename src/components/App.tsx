@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {TempScale, Weather} from '../types/types';
 import {WeatherMain} from './weatherMain/WeatherMain';
-import {WeatherDay} from './weatherDay/WeatherDay';
 import './App.css';
 import {WeatherState} from "../types/types";
 import {WeatherChart} from "./weatherChart/WeatherChart";
+import WeatherDayContainer from "../containers/WeatherDayContainer";
 
 export class App extends React.Component<WeatherState, WeatherState> {
 
@@ -47,12 +47,6 @@ export class App extends React.Component<WeatherState, WeatherState> {
         const {city, country, scale, days, dayIndex, hourIndex} = this.props;
         let currentDay = days[dayIndex];
         let currentForecast = currentDay.hours[hourIndex];
-        /*let x = 0;
-        let temps = currentDay.hours.map((forecast: any) => {
-            let pair =  [x, forecast.temperature];
-            x += 128;
-            return pair;
-        });*/
 
         let temps = currentDay.hours.map((forecast: any) => {
             return forecast.temperature;
@@ -86,14 +80,20 @@ export class App extends React.Component<WeatherState, WeatherState> {
                     <div className="col-sm-1"/>
                     {days.map((day, idx) => (
                         <div className="col-sm-2">
-                            <WeatherDay
+                            {/*<WeatherDay
                                 key={idx}
                                 dow={day.dow}
                                 hi={day.hi}
                                 lo={day.lo}
                                 scale={scale}
                                 weather={day.weather}
+                                onDayClick={this.onDayClick}
                                 isCurrentDay={idx === dayIndex}
+                            />*/}
+                            <WeatherDayContainer
+                                key={idx}
+                                day={day}
+                                index={idx}
                             />
                         </div>
                     ))}

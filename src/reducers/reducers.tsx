@@ -1,6 +1,6 @@
 import { WeatherAction } from "../actions/actions";
 import { WeatherState, TempScale, Weather } from '../types/types';
-import { RECEIVE_WEATHER } from "../constants/constants";
+import { RECEIVE_WEATHER, CHANGE_DAY } from "../constants/constants";
 
 export function weather(state: WeatherState, action: WeatherAction): WeatherState {
     switch (action.type) {
@@ -58,6 +58,8 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
                     return accumulator;
                 }, [])
             });
+        case CHANGE_DAY:
+            return { ...state, dayIndex: action.dayIndex};
         default:
             return state;
     }

@@ -1,5 +1,5 @@
 import { WeatherAction } from "../actions/actions";
-import { WeatherState, TempScale, Weather } from '../types/types';
+import {WeatherState, TempScale, Weather, ChartType} from '../types/types';
 import { RECEIVE_WEATHER, CHANGE_DAY } from "../constants/constants";
 
 export function weather(state: WeatherState, action: WeatherAction): WeatherState {
@@ -15,6 +15,7 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
                 hourIndex: 0,
                 city: json.city.name,
                 country: json.city.country,
+                chartType: ChartType.Precipitation,
                 scale: TempScale.F,
                 days: json.list.reduce((accumulator: any, hour: any, currentIndex: number) => {
                     let weather = getWeather(hour.weather[0].description);

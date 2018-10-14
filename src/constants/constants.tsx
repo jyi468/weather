@@ -6,3 +6,6 @@ export type RECEIVE_WEATHER = typeof RECEIVE_WEATHER;
 
 export const CHANGE_DAY = 'CHANGE_DAY';
 export type CHANGE_DAY = typeof CHANGE_DAY;
+
+export const CHANGE_CHART = 'CHANGE_CHART';
+export type CHANGE_CHART = typeof CHANGE_CHART;

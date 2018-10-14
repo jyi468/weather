@@ -6,6 +6,7 @@ export interface WeatherState {
     days: Day[];
     dayIndex: number;
     hourIndex: number;
+    chartType: ChartType;
     fetchWeather?: () => object;
 }
 
@@ -37,6 +38,12 @@ export enum TempScale {
     K = 'K', // API sends kelvin by default
     C = 'C°',
     F = 'F°'
+}
+
+export enum ChartType {
+    Temperature,
+    Precipitation,
+    Wind
 }
 
 export enum Weather {

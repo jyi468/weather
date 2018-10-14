@@ -1,6 +1,7 @@
 import * as constants from '../constants/constants';
 import { Dispatch } from 'redux';
 import { data } from '../resources/mountain-view';
+import {ChartType} from "../types/types";
 // Weather
 
 export interface ReceiveWeather {
@@ -51,6 +52,18 @@ export interface ChangeDay {
 export function changeDay(dayIndex: number): ChangeDay {
     return {
         type: constants.CHANGE_DAY,
-        dayIndex: dayIndex
+        dayIndex
+    }
+}
+
+export interface ChangeChart {
+    type: constants.CHANGE_CHART;
+    chartType: ChartType;
+}
+
+export function changeChart(chartType: ChartType): ChangeChart {
+    return {
+        type: constants.CHANGE_CHART,
+        chartType
     }
 }

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {TempScale, Weather} from '../types/types';
+import {ChartType, TempScale, Weather} from '../types/types';
 import {WeatherMain} from './weatherMain/WeatherMain';
 import './App.css';
 import {WeatherState} from "../types/types";
 import {WeatherChart} from "./weatherChart/WeatherChart";
 import WeatherDayContainer from "../containers/WeatherDayContainer";
 import WeatherUtils from "../WeatherUtils";
+import WeatherSelectorContainer from "../containers/WeatherSelectorContainer";
 
 export class App extends React.Component<WeatherState, WeatherState> {
 
@@ -15,6 +16,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
         scale: TempScale.F,
         dayIndex: 0,
         hourIndex: 0,
+        chartType: ChartType.Temperature,
         days: [{
             weather: Weather.ClearSky,
             dow: 0,
@@ -45,7 +47,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
     }
 
     render() {
-        const {city, country, scale, days, dayIndex, hourIndex} = this.props;
+        const {city, country, scale, days, dayIndex, hourIndex, chartType} = this.props;
         let currentDay = days[dayIndex];
         let currentForecast = currentDay.hours[hourIndex];
 
@@ -69,6 +71,14 @@ export class App extends React.Component<WeatherState, WeatherState> {
                             weather={currentForecast.weather}
                             time={currentForecast.time}
                             temperature={currentForecast.temperature}
+                        />
+                    </div>
+                    <div className="col-sm-5">
+                        <WeatherSelectorContainer
+                            chartType={chartType}
+                            wind={currentForecast.wind}
+                            humidity={currentForecast.humidity}
+                            precipitation={currentForecast.precipitation}
                         />
                     </div>
                 </div>

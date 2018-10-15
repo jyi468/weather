@@ -43,7 +43,8 @@ export enum TempScale {
 export enum ChartType {
     Temperature,
     Precipitation,
-    Wind
+    Wind,
+    Humidity
 }
 
 export enum Weather {

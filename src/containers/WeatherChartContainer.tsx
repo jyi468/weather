@@ -9,11 +9,12 @@ export interface ChartContainer {
     points: any[];
 }
 
-export function mapStateToProps({ scale, dayIndex }: WeatherState, { points }: ChartContainer) {
+export function mapStateToProps({ scale, dayIndex, chartType }: WeatherState, { points }: ChartContainer) {
     return {
         points,
         scale,
-        dayIndex
+        dayIndex,
+        chartType
     };
 }
 

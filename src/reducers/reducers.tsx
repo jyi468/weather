@@ -1,6 +1,6 @@
 import { WeatherAction } from "../actions/actions";
 import {WeatherState, TempScale, Weather, ChartType} from '../types/types';
-import {RECEIVE_WEATHER, CHANGE_DAY, CHANGE_HOUR} from "../constants/constants";
+import {RECEIVE_WEATHER, CHANGE_DAY, CHANGE_HOUR, CHANGE_CHART} from "../constants/constants";
 
 export function weather(state: WeatherState, action: WeatherAction): WeatherState {
     switch (action.type) {
@@ -15,7 +15,7 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
                 hourIndex: 0,
                 city: json.city.name,
                 country: json.city.country,
-                chartType: ChartType.Precipitation,
+                chartType: ChartType.Temperature,
                 scale: TempScale.F,
                 days: json.list.reduce((accumulator: any, hour: any, currentIndex: number) => {
                     let weather = getWeather(hour.weather[0].description);
@@ -64,6 +64,8 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
             return {...state, dayIndex: action.dayIndex};
         case CHANGE_HOUR:
             return {...state, hourIndex: action.hourIndex};
+        case CHANGE_CHART:
+            return {...state, chartType: action.chartType};
         default:
             return state;
     }

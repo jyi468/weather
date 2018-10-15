@@ -10,7 +10,7 @@ export interface ReceiveWeather {
     json: any;
 }
 
-export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay | ChangeHour; // Add other weather actions here
+export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay | ChangeHour | ChangeChart; // Add other weather actions here
 
 export interface FetchWeather {
     type: constants.FETCH_WEATHER;

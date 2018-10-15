@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Chart } from 'chart.js';
-import {TempScale, WeatherState} from "../../types/types";
+import {Chart} from 'chart.js';
+import {ChartType, TempScale, WeatherState} from "../../types/types";
 
 export interface ChartProps {
     points: any[]
     scale: TempScale;
     dayIndex: number;
+    chartType: ChartType;
     changeHour: (hourIndex: number) => {};
 }
 
@@ -21,18 +22,19 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
     // Do not update component if same day
     shouldComponentUpdate(nextProps: ChartProps) {
         if (nextProps) {
-            return nextProps.dayIndex !== this.props.dayIndex;
+            return (nextProps.dayIndex !== this.props.dayIndex) ||
+                (nextProps.chartType !== this.props.chartType);
         }
 
         return true;
     }
 
     render() {
-        let { points, scale, changeHour } = this.props;
+        let {points, scale, changeHour, chartType} = this.props;
         let ctx = document.getElementById("myChart") as HTMLCanvasElement;
 
         // Fix: do not re render when point is clicked
-        if (ctx) {
+        if (ctx && chartType === ChartType.Temperature) {
             //let progress = document.getElementById('animationProgress');
             const myChart: Chart = new Chart(ctx, {
                 type: 'line',
@@ -49,7 +51,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                 options: {
                     plugins: {
                         datalabels: {
-                            backgroundColor: function(context: any) {
+                            backgroundColor: function (context: any) {
                                 return context.dataset.backgroundColor;
                             },
                             borderRadius: 4,
@@ -101,7 +103,8 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
         return (
             <div className="card p-3">
                 <div className="card-img-top">
-                    <canvas id="myChart" width="400" height="75"></canvas>
+                    {chartType === ChartType.Temperature &&
+                    <canvas id="myChart" width="400" height="75"></canvas>}
                 </div>
             </div>
 

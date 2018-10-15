@@ -1,14 +1,15 @@
 import * as React from 'react';
-import {Wind} from '../../types/types';
+import {Wind, ChartType} from '../../types/types';
 
 export interface WeatherSelectorProps {
     precipitation: number;
     humidity: number;
     wind: Wind;
+    selectChartType: (chartType: ChartType) => {};
 }
 
 export const WeatherSelector: React.SFC<WeatherSelectorProps> = (props) => {
-    const { precipitation, humidity, wind } = props;
+    const { precipitation, humidity, wind, selectChartType } = props;
 
     return (
         <div className="card">
@@ -23,9 +24,22 @@ export const WeatherSelector: React.SFC<WeatherSelectorProps> = (props) => {
                     Wind: {Math.round(wind.speed)} mph
                 </h5>
                 <div className="btn-group" role="group">
-                    <button type="button" className="btn btn-outline-secondary">Precipitation</button>
-                    <button type="button" className="btn btn-outline-secondary">Humidity</button>
-                    <button type="button" className="btn btn-outline-secondary">Wind</button>
+                    <button
+                        id="temperature"
+                        type="button"
+                        className="btn btn-outline-secondary"
+                        onClick={() => selectChartType(ChartType.Temperature)}>Temperature</button>
+                    <button
+                        id="precipitation"
+                        type="button"
+                        className="btn btn-outline-secondary"
+                        onClick={() => selectChartType(ChartType.Precipitation)}>Precipitation</button>
+                    <button
+                        id="wind"
+                        type="button"
+                        className="btn btn-outline-secondary"
+                        onClick={() => selectChartType(ChartType.Wind)}>Wind</button>
+                    {/*<button type="button" className="btn btn-outline-secondary">Humidity</button>*/}
                 </div>
             </div>
         </div>

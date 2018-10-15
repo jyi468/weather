@@ -14,13 +14,13 @@ export const WeatherSelector: React.SFC<WeatherSelectorProps> = (props) => {
         <div className="card">
             <div className="card-body">
                 <h5 className="card-text">
-                    Precipitation: {Math.round(precipitation)}%
+                    Precipitation: {(precipitation * 0.0393701).toFixed(2)} in.
                 </h5>
                 <h5 className="card-text">
                     Humidity: {humidity}%
                 </h5>
                 <h5 className="card-text">
-                    Wind: {wind.speed} mph
+                    Wind: {Math.round(wind.speed)} mph
                 </h5>
                 <div className="btn-group" role="group">
                     <button type="button" className="btn btn-outline-secondary">Precipitation</button>

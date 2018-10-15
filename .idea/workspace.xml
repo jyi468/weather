@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db9e0dd8-5774-487f-a09b-6d1f7d6c6fcb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/WeatherChartContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/WeatherChartContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/weatherSelector/WeatherSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weatherSelector/WeatherSelector.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +18,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.44886363">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="WeatherChart.tsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="WeatherChart.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="408">
@@ -33,11 +30,32 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="WeatherSelector.tsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/weatherSelector/WeatherSelector.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="264">
+                  <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="mountain-view.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/resources/mountain-view.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="208">
+                  <caret line="461" column="11" selection-start-line="461" selection-start-column="7" selection-end-line="461" selection-end-column="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/App.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+                <state relative-caret-position="187">
+                  <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -70,11 +88,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="reducers.tsx" pinned="false" current-in-tab="false">
+          <file leaf-file-name="reducers.tsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/reducers/reducers.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="438">
-                  <caret line="75" column="16" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="16" />
+                <state relative-caret-position="200">
+                  <caret line="61" selection-start-line="61" selection-end-line="66" />
                   <folding>
                     <element signature="e#0#51#0" expanded="true" />
                   </folding>
@@ -82,7 +100,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WeatherChartContainer.tsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="WeatherChartContainer.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/WeatherChartContainer.tsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="391">
@@ -100,7 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>offset</find>
       <find>rea</find>
       <find>react app&quot;</find>
       <find>enthusiasm</find>
@@ -130,6 +147,7 @@
       <find>currenthour</find>
       <find>fetchweat</find>
       <find>app.ts</find>
+      <find>rain</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -140,10 +158,10 @@
       <replace>selector</replace>
       <replace>CHART</replace>
       <replace>hour</replace>
-      <replace>Chart</replace>
       <replace>btn-outline-secondary</replace>
       <replace>SelectorContainer</replace>
       <replace>HOUR</replace>
+      <replace>Chart</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/node_modules/react-redux</dir>
@@ -181,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/containers/WeatherDayContainer.tsx" />
         <option value="$PROJECT_DIR$/src/containers/App.tsx" />
         <option value="$PROJECT_DIR$/src/types/types.tsx" />
-        <option value="$PROJECT_DIR$/src/components/weatherSelector/WeatherSelector.tsx" />
         <option value="$PROJECT_DIR$/src/constants/constants.tsx" />
         <option value="$PROJECT_DIR$/src/reducers/reducers.tsx" />
         <option value="$PROJECT_DIR$/src/containers/WeatherSelectorContainer.tsx" />
@@ -189,6 +206,7 @@
         <option value="$PROJECT_DIR$/src/actions/actions.tsx" />
         <option value="$PROJECT_DIR$/src/containers/WeatherChartContainer.tsx" />
         <option value="$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx" />
+        <option value="$PROJECT_DIR$/src/components/weatherSelector/WeatherSelector.tsx" />
       </list>
     </option>
   </component>
@@ -403,12 +421,12 @@
       <workItem from="1538417790903" duration="76000" />
       <workItem from="1538417926376" duration="16876000" />
       <workItem from="1538834564821" duration="121000" />
-      <workItem from="1539031579202" duration="70575000" />
+      <workItem from="1539031579202" duration="70965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87648000" />
+    <option name="totallyTimeSpent" value="88038000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,8 +521,13 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/App.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -785,27 +808,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/weatherSelector/WeatherSelector.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/constants.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/mountain-view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="239" column="24" lean-forward="true" selection-start-line="239" selection-start-column="24" selection-end-line="239" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -825,26 +831,6 @@
           <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/reducers.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="75" column="16" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -886,10 +872,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/mountain-view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="461" column="11" selection-start-line="461" selection-start-column="7" selection-end-line="461" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/reducers.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="61" selection-start-line="61" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/weatherSelector/WeatherSelector.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

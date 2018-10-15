@@ -24,7 +24,7 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
                         weather: weather,
                         temperature: hour.main.temp,
                         humidity: hour.main.humidity,
-                        precipitation: hour.rain ? hour.rain['3h'] : 0,
+                        precipitation: hour.rain['3h'] || 0,
                         wind: hour.wind
                     };
 

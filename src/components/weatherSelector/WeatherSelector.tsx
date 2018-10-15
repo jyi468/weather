@@ -14,7 +14,7 @@ export const WeatherSelector: React.SFC<WeatherSelectorProps> = (props) => {
         <div className="card">
             <div className="card-body">
                 <h5 className="card-text">
-                    Precipitation: {precipitation}%
+                    Precipitation: {Math.round(precipitation)}%
                 </h5>
                 <h5 className="card-text">
                     Humidity: {humidity}%

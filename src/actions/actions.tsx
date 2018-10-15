@@ -10,7 +10,7 @@ export interface ReceiveWeather {
     json: any;
 }
 
-export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay; // Add other weather actions here
+export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay | ChangeHour; // Add other weather actions here
 
 export interface FetchWeather {
     type: constants.FETCH_WEATHER;
@@ -53,6 +53,18 @@ export function changeDay(dayIndex: number): ChangeDay {
     return {
         type: constants.CHANGE_DAY,
         dayIndex
+    }
+}
+
+export interface ChangeHour {
+    type: constants.CHANGE_HOUR;
+    hourIndex: number;
+}
+
+export function changeHour(hourIndex: number): ChangeHour {
+    return {
+        type: constants.CHANGE_HOUR,
+        hourIndex
     }
 }
 

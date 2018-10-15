@@ -24,7 +24,7 @@ export function mapStateToProps({ chartType }: WeatherState, { precipitation, hu
 export function mapDispatchToProps(dispatch: ThunkDispatch<WeatherState, void, Action>, { chartType }: SelectorContainer) {
     return {
         // Change chart type
-        selectChartType: () => dispatch(actions.changeChart(chartType)),
+        selectChartType: () => dispatch(actions.changeChart(chartType))
     }
 }
 

@@ -5,10 +5,15 @@ import {TempScale} from "../../types/types";
 export interface ChartProps {
     points: any[]
     scale: TempScale;
+    changeHour: (hourIndex: number) => {};
+}
+
+export interface ChartElement {
+    _index: number;
 }
 
 export const WeatherChart: React.SFC<ChartProps> = (props) => {
-    let { points, scale } = props;
+    let { points, scale, changeHour } = props;
     let ctx = document.getElementById("myChart") as HTMLCanvasElement;
 
     if (ctx) {
@@ -26,6 +31,11 @@ export const WeatherChart: React.SFC<ChartProps> = (props) => {
                 }]
             },
             options: {
+                onClick: (e: MouseEvent) => {
+                    const point: ChartElement = myChart.getElementAtEvent(e)[0];
+                    const hourIndex = point._index;
+                    changeHour(hourIndex);
+                },
                 legend: {
                     display: false
                 },

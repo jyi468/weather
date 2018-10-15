@@ -3,10 +3,10 @@ import {ChartType, TempScale, Weather} from '../types/types';
 import {WeatherMain} from './weatherMain/WeatherMain';
 import './App.css';
 import {WeatherState} from "../types/types";
-import {WeatherChart} from "./weatherChart/WeatherChart";
 import WeatherDayContainer from "../containers/WeatherDayContainer";
 import WeatherUtils from "../WeatherUtils";
 import WeatherSelectorContainer from "../containers/WeatherSelectorContainer";
+import WeatherChartContainer from "../containers/WeatherChartContainer";
 
 export class App extends React.Component<WeatherState, WeatherState> {
 
@@ -84,7 +84,9 @@ export class App extends React.Component<WeatherState, WeatherState> {
                 </div>
                 <div className="row">
                     <div className="col-sm-10 offset-sm-1 mb-3">
-                        <WeatherChart points={temps} scale={scale}/>
+                        <WeatherChartContainer
+                            points={temps}
+                        />
                     </div>
                 </div>
                 <div className="row">

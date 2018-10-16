@@ -5,13 +5,10 @@ import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import {WeatherChart} from "../components/weatherChart/WeatherChart";
 
-export interface ChartContainer {
-    points: any[];
-}
-
-export function mapStateToProps({ scale, dayIndex, chartType }: WeatherState, { points }: ChartContainer) {
+// Chart rerendering depends on if this function returns differently than previously
+export function mapStateToProps({ scale, days, dayIndex, chartType }: WeatherState) {
     return {
-        points,
+        days,
         scale,
         dayIndex,
         chartType

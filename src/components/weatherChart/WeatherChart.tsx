@@ -1,9 +1,10 @@
 import * as React from "react";
 import {Chart} from 'chart.js';
-import {ChartType, TempScale, WeatherState} from "../../types/types";
+import {ChartType, Day, TempScale, WeatherState} from "../../types/types";
+import WeatherUtils from "../../WeatherUtils";
 
 export interface ChartProps {
-    points: any[]
+    days: Day[];
     scale: TempScale;
     dayIndex: number;
     chartType: ChartType;
@@ -20,19 +21,25 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
     }
 
     // Do not update component if same day
-    shouldComponentUpdate(nextProps: ChartProps) {
+    /*shouldComponentUpdate(nextProps: ChartProps) {
         if (nextProps) {
             return (nextProps.dayIndex !== this.props.dayIndex) ||
                 (nextProps.chartType !== this.props.chartType);
         }
 
         return true;
-    }
+    }*/
 
     render() {
-        let {points, scale, changeHour, chartType} = this.props;
-        let ctx = document.getElementById("myChart") as HTMLCanvasElement;
+        let { days, dayIndex, scale, changeHour, chartType} = this.props;
+        let points: any = [];
+        if (days) {
+            points = days[dayIndex].hours.map((forecast: any) => {
+                return WeatherUtils.getTemperature(forecast.temperature, scale);
+            });
+        }
 
+        let ctx = document.getElementById("myChart") as HTMLCanvasElement;
         // Fix: do not re render when point is clicked
         if (ctx && chartType === ChartType.Temperature) {
             //let progress = document.getElementById('animationProgress');
@@ -103,8 +110,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
         return (
             <div className="card p-3">
                 <div className="card-img-top">
-                    {chartType === ChartType.Temperature &&
-                    <canvas id="myChart" width="400" height="75"></canvas>}
+                    {<canvas id="myChart" width="400" height="75"></canvas>}
                 </div>
             </div>
 

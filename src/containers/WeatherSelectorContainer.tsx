@@ -12,6 +12,7 @@ export interface SelectorContainer {
     wind: Wind;
 }
 
+// Returned object decides if re-render is necessary
 export function mapStateToProps({ chartType }: WeatherState, { precipitation, humidity, wind }: SelectorContainer) {
     return {
         chartType,

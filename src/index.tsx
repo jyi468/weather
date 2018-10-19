@@ -3,7 +3,8 @@ import * as ReactDOM from 'react-dom';
 //import App from './App';
 // import App from './components/App';
 
-import 'weather-icons/css/weather-icons.css';
+import 'weather-icons-npm/css/weather-icons.css';
+import 'weather-icons-npm/css/weather-icons-wind.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';

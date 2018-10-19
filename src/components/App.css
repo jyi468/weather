@@ -11,3 +11,10 @@
     font-size: 40px;
     min-width: 50px;
 }
+
+.wi-wind {
+    display: inline-block;
+    font-size: 60px;
+    text-align: center;
+    width: 100%;
+}

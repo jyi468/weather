@@ -1,7 +1,9 @@
 import * as React from "react";
 import {Chart} from 'chart.js';
-import {ChartType, Day, TempScale, WeatherState} from "../../types/types";
+import {ChartType, Day, Forecast, TempScale, WeatherState, Wind} from "../../types/types";
 import WeatherUtils from "../../WeatherUtils";
+import {WeatherWind} from "../weatherWind/WeatherWind";
+import {HOUR_LABELS} from "../../constants/constants";
 
 export interface ChartProps {
     days: Day[];
@@ -22,18 +24,19 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
 
     render() {
         let {days, dayIndex, scale, changeHour, chartType} = this.props;
+        let winds: Wind[] = [];
 
         if (days) {
             switch (chartType) {
                 case ChartType.Temperature:
                     let tempCtx = document.getElementById("tempChart") as HTMLCanvasElement || {};
-                    let tPoints: any[] = days[dayIndex].hours.map((forecast: any) => {
+                    let tPoints: any[] = days[dayIndex].hours.map((forecast: Forecast) => {
                         return WeatherUtils.getTemperature(forecast.temperature, scale);
                     });
                     const tChart = new Chart(tempCtx, {
                         type: 'line',
                         data: {
-                            labels: ['2 AM', '5 AM', '8 AM', '11 AM', '2 PM', '5 PM', '8 PM', '11 PM'],
+                            labels: HOUR_LABELS,
                             datasets: [{
                                 label: 'Temperature',
                                 data: tPoints,
@@ -99,7 +102,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                     const pChart: Chart = new Chart(precipCtx, {
                         type: 'bar',
                         data: {
-                            labels: ['2 AM', '5 AM', '8 AM', '11 AM', '2 PM', '5 PM', '8 PM', '11 PM'],
+                            labels: HOUR_LABELS,
                             datasets: [{
                                 label: 'Precipitation',
                                 data: pPoints,
@@ -158,21 +161,43 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                     });
                     break;
                 case ChartType.Wind:
-
+                     winds = days[dayIndex].hours.map((forecast: Forecast) => (forecast.wind));
             }
         }
 
         return (
-            <div className="card p-3">
-                <div className="card-img-top">
-                    {(chartType === undefined ||
-                        chartType === ChartType.Temperature) &&
-                    <canvas id="tempChart" width="400" height="75"></canvas>}
-                    {(chartType === undefined || chartType === ChartType.Precipitation) &&
-                    <canvas id="precipChart" width="400" height="75"></canvas>}
-                </div>
+            <div>
+                {chartType !== ChartType.Wind &&
+                <div className="card p-3">
+                    <div className="card-img-top">
+                        {(chartType === undefined ||
+                            chartType === ChartType.Temperature) &&
+                        <canvas id="tempChart" width="400" height="75"></canvas>}
+                        {(chartType === undefined ||
+                            chartType === ChartType.Precipitation) &&
+                        <canvas id="precipChart" width="400" height="75"></canvas>}
+                    </div>
+                </div>}
+                {(chartType === undefined || chartType === ChartType.Wind) &&
+                <ul className="list-inline">
+                    {winds.map((wind, idx) => (
+                            <WeatherWind
+                                wind={wind}
+                                index={idx}
+                            />
+                    ))}
+                </ul>
+                /*<div className="row">
+                    {winds.map((wind, idx) => (
+                        <div className="col-sm-2">
+                            <WeatherWind
+                                wind={wind}
+                                index={idx}
+                            />
+                        </div>
+                    ))}
+                </div>*/}
             </div>
-
         );
     }
 }

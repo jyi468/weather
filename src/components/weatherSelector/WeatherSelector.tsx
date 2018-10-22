@@ -13,6 +13,9 @@ export const WeatherSelector: React.SFC<WeatherSelectorProps> = (props) => {
 
     return (
         <div className="card">
+            <div className="card-header">
+                <h5 className="card-title">Additional Information</h5>
+            </div>
             <div className="card-body">
                 <h5 className="card-text">
                     Precipitation: {(precipitation * 0.0393701).toFixed(2)} in.
@@ -39,7 +42,6 @@ export const WeatherSelector: React.SFC<WeatherSelectorProps> = (props) => {
                         type="button"
                         className="btn btn-outline-secondary"
                         onClick={() => selectChartType(ChartType.Wind)}>Wind</button>
-                    {/*<button type="button" className="btn btn-outline-secondary">Humidity</button>*/}
                 </div>
             </div>
         </div>

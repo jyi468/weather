@@ -16,7 +16,7 @@ export interface WeatherDayProps {
 export const WeatherDay: React.SFC<WeatherDayProps> = (props) => {
     let {dow, weather, hi, lo, isCurrentDay, scale, selectCurrentDay} = props;
     return (
-        <div className={"card text-center" + (isCurrentDay ? " border-primary" : "")} onClick={selectCurrentDay}>
+        <div className={"card text-center" + (isCurrentDay ? " border-secondary" : "")} onClick={selectCurrentDay}>
             <div className="card-header">
                 {WeatherUtils.getDayOfWeek(dow)}
             </div>

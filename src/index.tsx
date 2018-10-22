@@ -13,7 +13,7 @@ import { createStore, applyMiddleware, Action } from 'redux';
 import { weather } from './reducers/reducers';
 import { WeatherState } from './types/types';
 
-import App from './containers/App';
+import App from './containers/AppContainer';
 import { Provider } from 'react-redux';
 import {default as thunk, ThunkMiddleware} from 'redux-thunk';
 import { createLogger } from 'redux-logger';

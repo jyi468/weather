@@ -1,18 +1,19 @@
 import * as React from 'react';
-import {Wind} from '../../types/types';
 import {HOUR_LABELS} from "../../constants/constants";
+import {WindContainerProps} from "../../containers/WeatherWindContainer";
 
-export interface WindProps {
-    wind: Wind;
-    index: number;
+export interface WindProps extends WindContainerProps{
+    currentHour: number;
+    changeHour: (hourIndex: number) => {}
 }
 
 export const WeatherWind: React.SFC<WindProps> = (props) => {
-    const { wind, index } = props;
+    const { wind, index, currentHour, changeHour } = props;
 
     return (
         <li className="list-inline-item">
-            <div className="card">
+            <div className={'card' + ((currentHour === index) ? ' border-secondary' : '')}
+                 onClick={() => {changeHour(index)}}>
                 <div className="card-body">
                     <h5 className="card-title">
                         {Math.round(wind.speed * 2.23694)} mph

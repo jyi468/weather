@@ -2,8 +2,8 @@ import * as React from "react";
 import {Chart} from 'chart.js';
 import {ChartType, Day, Forecast, TempScale, WeatherState, Wind} from "../../types/types";
 import WeatherUtils from "../../WeatherUtils";
-import {WeatherWind} from "../weatherWind/WeatherWind";
 import {HOUR_LABELS} from "../../constants/constants";
+import WeatherWindContainer from "../../containers/WeatherWindContainer";
 
 export interface ChartProps {
     days: Day[];
@@ -138,6 +138,13 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                                     const hourIndex = point._index;
                                     changeHour(hourIndex);
                                 }
+                                // Cast to get past type checking for getElementsAtXAxis
+                                let c = this.chart as any;
+                                const xlabel: ChartElement = c.getElementsAtXAxis(e)[0];
+                                if (xlabel) {
+                                    const  hourIndex = xlabel._index;
+                                    changeHour(hourIndex)
+                                }
                             },
                             legend: {
                                 display: false
@@ -179,15 +186,14 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                         <canvas id="chart" width="400" height="75"></canvas>
                     </div>
                 </div>
-                {(chartType === undefined || chartType === ChartType.Wind) &&
-                <ul className="list-inline">
+                <ul className="list-inline d-flex justify-content-between" style={{display: chartType === ChartType.Wind ? 'block' : 'none'}}>
                     {winds.map((wind, idx) => (
-                            <WeatherWind
+                            <WeatherWindContainer
                                 wind={wind}
                                 index={idx}
                             />
                     ))}
-                </ul>}
+                </ul>
             </div>
         );
     }

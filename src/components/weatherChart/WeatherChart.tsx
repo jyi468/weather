@@ -18,6 +18,7 @@ export interface ChartElement {
 }
 
 export class WeatherChart extends React.Component<ChartProps, WeatherState> {
+    chart: Chart;
     constructor(props: ChartProps) {
         super(props);
     }
@@ -29,11 +30,14 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
         if (days) {
             switch (chartType) {
                 case ChartType.Temperature:
-                    let tempCtx = document.getElementById("tempChart") as HTMLCanvasElement || {};
+                    let tempCtx = document.getElementById("chart") as HTMLCanvasElement || {};
                     let tPoints: any[] = days[dayIndex].hours.map((forecast: Forecast) => {
                         return WeatherUtils.getTemperature(forecast.temperature, scale);
                     });
-                    const tChart = new Chart(tempCtx, {
+                    if (this.chart) {
+                        this.chart.destroy();
+                    }
+                    this.chart = new Chart(tempCtx, {
                         type: 'line',
                         data: {
                             labels: HOUR_LABELS,
@@ -60,7 +64,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                                 }
                             },
                             onClick: (e: MouseEvent) => {
-                                const point: ChartElement = tChart.getElementAtEvent(e)[0];
+                                const point: ChartElement = this.chart.getElementAtEvent(e)[0];
                                 if (point) {
                                     const hourIndex = point._index;
                                     changeHour(hourIndex);
@@ -95,11 +99,14 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                     });
                     break;
                 case ChartType.Precipitation:
-                    let precipCtx = document.getElementById("precipChart") as HTMLCanvasElement || {};
+                    let precipCtx = document.getElementById("chart") as HTMLCanvasElement || {};
                     let pPoints: any[] = days[dayIndex].hours.map((forecast: any) => {
                         return (forecast.precipitation * 0.0393701).toFixed(2);
                     });
-                    const pChart: Chart = new Chart(precipCtx, {
+                    if (this.chart) {
+                        this.chart.destroy();
+                    }
+                    this.chart = new Chart(precipCtx, {
                         type: 'bar',
                         data: {
                             labels: HOUR_LABELS,
@@ -126,7 +133,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                                 }
                             },
                             onClick: (e: MouseEvent) => {
-                                const point: ChartElement = pChart.getElementAtEvent(e)[0];
+                                const point: ChartElement = this.chart.getElementAtEvent(e)[0];
                                 if (point) {
                                     const hourIndex = point._index;
                                     changeHour(hourIndex);
@@ -167,17 +174,11 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
 
         return (
             <div>
-                {chartType !== ChartType.Wind &&
-                <div className="card p-3">
+                <div className="card p-3" style={{display: chartType === ChartType.Wind ? 'none' : 'block'}}>
                     <div className="card-img-top">
-                        {(chartType === undefined ||
-                            chartType === ChartType.Temperature) &&
-                        <canvas id="tempChart" width="400" height="75"></canvas>}
-                        {(chartType === undefined ||
-                            chartType === ChartType.Precipitation) &&
-                        <canvas id="precipChart" width="400" height="75"></canvas>}
+                        <canvas id="chart" width="400" height="75"></canvas>
                     </div>
-                </div>}
+                </div>
                 {(chartType === undefined || chartType === ChartType.Wind) &&
                 <ul className="list-inline">
                     {winds.map((wind, idx) => (
@@ -186,17 +187,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                                 index={idx}
                             />
                     ))}
-                </ul>
-                /*<div className="row">
-                    {winds.map((wind, idx) => (
-                        <div className="col-sm-2">
-                            <WeatherWind
-                                wind={wind}
-                                index={idx}
-                            />
-                        </div>
-                    ))}
-                </div>*/}
+                </ul>}
             </div>
         );
     }

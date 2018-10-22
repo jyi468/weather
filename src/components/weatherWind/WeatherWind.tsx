@@ -19,9 +19,9 @@ export const WeatherWind: React.SFC<WindProps> = (props) => {
                         {Math.round(wind.speed * 2.23694)} mph
                     </h5>
                     <i className={'mb-3 wi wi-wind towards-' + Math.round(wind.deg) + '-deg'}></i>
-                    <h5 className="card-text">
+                    <h6 className="card-text text-center text-muted">
                         {HOUR_LABELS[index]}
-                    </h5>
+                    </h6>
                 </div>
             </div>
         </li>

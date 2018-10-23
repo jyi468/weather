@@ -24,10 +24,11 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
                         weather: weather,
                         temperature: hour.main.temp,
                         humidity: hour.main.humidity,
-                        precipitation: hour.rain['3h'] || 0,
+                        precipitation: (hour.rain && hour.rain['3h']) ? hour.rain['3h'] : 0,
                         wind: hour.wind
                     };
 
+                    // Every 8 items, we add a new day with the start date. Else, we add hours to the current day
                     if (currentIndex % 8 === 0) {
                         // Add new day
                         accumulator.push({
@@ -47,10 +48,11 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
                         accumulator[Math.floor(currentIndex / 8)].hours.push(forecast);
                     }
 
+                    // Compare current block's min and max and set if applicable
                     hi = Math.max(hi, hour.main.temp_max);
                     lo = Math.min(lo, hour.main.temp_min);
 
-                    // Add temperature hi and lo for day if index is last in day
+                    // Set default hi and lo for day if index is last in day
                     if ((currentIndex + 1) % 8 === 0) {
                         accumulator[Math.floor(currentIndex / 8)].hi = hi;
                         accumulator[Math.floor(currentIndex / 8)].lo = lo;

@@ -86,7 +86,8 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                                         display: false
                                     },
                                     ticks: {
-                                        display: false
+                                        display: false,
+                                        beginAtZero: true
                                     }
                                 }]
                             },
@@ -162,7 +163,8 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                                         display: false
                                     },
                                     ticks: {
-                                        display: false
+                                        display: false,
+                                        beginAtZero: true
                                     }
                                 }]
                             },

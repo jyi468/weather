@@ -1,6 +1,6 @@
 import * as constants from '../constants/constants';
 import { Dispatch } from 'redux';
-import { data } from '../resources/mountain-view';
+// import { data } from '../resources/mountain-view';
 import {ChartType} from "../types/types";
 // Weather
 
@@ -26,21 +26,25 @@ export function receiveWeather(json: object): ReceiveWeather {
 }
 
 export function fetchWeather() {
+
     return (dispatch: Dispatch) => {
-        return new Promise(function (resolve, reject) {
+        /*return new Promise(function (resolve, reject) {
             setTimeout(function() {
                 resolve(data)
             });
-        })
-
-        /*return fetch("http://localhost:5000/src/resources/mountain-view.js", {
-            method: 'GET',
-            headers: {
-                'Access-Control-Allow-Origin': '*'
-            }
         })*/
-            //.then(response => response.json())
-            .then(json => dispatch(receiveWeather(json)))
+        navigator.geolocation.getCurrentPosition((position) => {
+            // const lat = Math.round(position.coords.latitude);
+            // const lon = Math.round(position.coords.longitude);
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            return fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3b0908e2927857885e7e6ef65e51e4ec`, {
+                method: 'GET'
+            })
+                .then(response => response.json())
+                .then(json => dispatch(receiveWeather(json)))
+        });
     }
 }
 

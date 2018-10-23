@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db9e0dd8-5774-487f-a09b-6d1f7d6c6fcb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/reducers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/reducers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -97,14 +94,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="actions.tsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="actions.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="46" column="11" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+                <state relative-caret-position="340">
+                  <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#52#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
                 </state>
               </provider>
             </entry>
@@ -225,6 +231,7 @@
         <option value="$PROJECT_DIR$/src/reducers/reducers.tsx" />
         <option value="$PROJECT_DIR$/src/components/weatherChart/WeatherChart.tsx" />
         <option value="$PROJECT_DIR$/src/actions/actions.tsx" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -431,12 +438,12 @@
       <workItem from="1538417926376" duration="16876000" />
       <workItem from="1538834564821" duration="121000" />
       <workItem from="1539031579202" duration="83727000" />
-      <workItem from="1540240141378" duration="8749000" />
+      <workItem from="1540240141378" duration="8926000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109549000" />
+    <option name="totallyTimeSpent" value="109726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -567,9 +574,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -895,11 +899,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="46" column="11" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+        <state relative-caret-position="340">
+          <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

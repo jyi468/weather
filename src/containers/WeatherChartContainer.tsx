@@ -6,12 +6,13 @@ import { ThunkDispatch } from 'redux-thunk';
 import {WeatherChart} from "../components/weatherChart/WeatherChart";
 
 // Chart rerendering depends on if this function returns differently than previously
-export function mapStateToProps({ scale, days, dayIndex, chartType }: WeatherState) {
+export function mapStateToProps({ scale, days, dayIndex, chartType, hourOffset }: WeatherState) {
     return {
         days,
         scale,
         dayIndex,
-        chartType
+        chartType,
+        hourOffset
     };
 }
 

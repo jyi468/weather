@@ -10,9 +10,15 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
             let hi = 0;
             let lo = Infinity;
             let importance = 0;
+            // Hours already in UTC in API
+            const utcHour = new Date(json.list[0].dt * 1000).getUTCHours();
+            const utcOffset = -4; // Get utc offset based on geolocation
+            const localHour = (utcHour + utcOffset + 24) % 24;
+            const hourOffset = Math.floor((localHour - 2) / 3);
             return Object.assign({}, state, {
                 dayIndex: 0,
                 hourIndex: 0,
+                hourOffset,
                 city: json.city.name,
                 country: json.city.country,
                 chartType: ChartType.Temperature,

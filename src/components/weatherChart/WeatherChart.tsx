@@ -9,6 +9,7 @@ export interface ChartProps {
     days: Day[];
     scale: TempScale;
     dayIndex: number;
+    hourOffset: number;
     chartType: ChartType;
     changeHour: (hourIndex: number) => {};
 }
@@ -24,8 +25,11 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
     }
 
     render() {
-        let {days, dayIndex, scale, changeHour, chartType} = this.props;
+        let {days, dayIndex, hourOffset, scale, changeHour, chartType} = this.props;
         let winds: Wind[] = [];
+        const secondHalf = HOUR_LABELS.slice();
+        const firstHalf = secondHalf.splice(hourOffset, HOUR_LABELS.length);
+        const HOUR_LABELS_COPY = firstHalf.concat(secondHalf);
 
         if (days) {
             switch (chartType) {
@@ -40,7 +44,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                     this.chart = new Chart(tempCtx, {
                         type: 'line',
                         data: {
-                            labels: HOUR_LABELS,
+                            labels: HOUR_LABELS_COPY,
                             datasets: [{
                                 label: 'Temperature',
                                 data: tPoints,
@@ -110,7 +114,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
                     this.chart = new Chart(precipCtx, {
                         type: 'bar',
                         data: {
-                            labels: HOUR_LABELS,
+                            labels: HOUR_LABELS_COPY,
                             datasets: [{
                                 label: 'Precipitation',
                                 data: pPoints,

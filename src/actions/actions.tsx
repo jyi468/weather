@@ -1,7 +1,8 @@
 import * as constants from '../constants/constants';
-import { Dispatch } from 'redux';
+import {Dispatch} from 'redux';
 // import { data } from '../resources/mountain-view';
 import {ChartType} from "../types/types";
+
 // Weather
 
 export interface ReceiveWeather {
@@ -14,6 +15,7 @@ export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay | ChangeHo
 
 export interface FetchWeather {
     type: constants.FETCH_WEATHER;
+
     (dispatch: Dispatch): object;
 }
 
@@ -22,7 +24,7 @@ export function receiveWeather(json: object): ReceiveWeather {
     return {
         json: json,
         type: constants.RECEIVE_WEATHER
-    } ;
+    };
 }
 
 export function fetchWeather() {
@@ -33,18 +35,29 @@ export function fetchWeather() {
                 resolve(data)
             });
         })*/
-        navigator.geolocation.getCurrentPosition((position) => {
-            // const lat = Math.round(position.coords.latitude);
-            // const lon = Math.round(position.coords.longitude);
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
+        let lat = 42;
+        let lon = -72;
 
-            return fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3b0908e2927857885e7e6ef65e51e4ec`, {
-                method: 'GET'
-            })
-                .then(response => response.json())
-                .then(json => dispatch(receiveWeather(json)))
-        });
+        return fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3b0908e2927857885e7e6ef65e51e4ec`, {
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(json => dispatch(receiveWeather(json)));
+        /*navigator.geolocation.getCurrentPosition((position) => {
+                // const lat = Math.round(position.coords.latitude);
+                // const lon = Math.round(position.coords.longitude);
+                lat = position.coords.latitude;
+                lon = position.coords.longitude;
+
+                return fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3b0908e2927857885e7e6ef65e51e4ec`, {
+                    method: 'GET'
+                })
+                    .then(response => response.json())
+                    .then(json => dispatch(receiveWeather(json)))
+            }, (error) => {
+                console.log(error.message)
+            },
+            {timeout: 50000, enableHighAccuracy: true, maximumAge: 0});*/
     }
 }
 

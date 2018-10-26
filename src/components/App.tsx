@@ -15,6 +15,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
         scale: TempScale.F,
         dayIndex: 0,
         hourIndex: 0,
+        hourOffset: 0,
         chartType: ChartType.Temperature,
         days: [{
             weather: Weather.ClearSky,

@@ -6,6 +6,7 @@ export interface WeatherState {
     days: Day[];
     dayIndex: number;
     hourIndex: number;
+    hourOffset: number;
     chartType: ChartType;
     fetchWeather?: () => object;
 }

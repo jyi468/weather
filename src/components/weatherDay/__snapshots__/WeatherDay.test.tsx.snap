@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather Day renders the component (snapshot) 1`] = `
+<div
+  className="card text-center"
+  onClick={[Function]}
+>
+  <div
+    className="card-header"
+  >
+    Fri
+  </div>
+  <div
+    className="card-body"
+  >
+    <h1
+      className="card-text"
+    >
+      <i
+        className="wi wi-day-sunny"
+      />
+    </h1>
+    <h6>
+      <strong>
+        47
+      </strong>
+       
+      35
+    </h6>
+  </div>
+</div>
+`;

@@ -1,6 +1,8 @@
 import { WeatherAction } from "../actions/actions";
 import {WeatherState, TempScale, Weather, ChartType} from '../types/types';
 import {RECEIVE_WEATHER, CHANGE_DAY, CHANGE_HOUR, CHANGE_CHART} from "../constants/constants";
+//import * as moment from 'moment';
+import * as moment from 'moment-timezone';
 
 export function weather(state: WeatherState, action: WeatherAction): WeatherState {
     switch (action.type) {
@@ -10,10 +12,12 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
             let hi = 0;
             let lo = Infinity;
             let importance = 0;
+
             // Hours already in UTC in API
             const utcHour = new Date(json.list[0].dt * 1000).getUTCHours();
-            const utcOffset = -4; // Get utc offset based on geolocation
+            const utcOffset = moment.tz(json.timezone).utcOffset() / 60;
             const localHour = (utcHour + utcOffset + 24) % 24;
+            // Calculate hour offset so we know how to shift the hour labels
             const hourOffset = Math.floor((localHour - 2) / 3);
             return Object.assign({}, state, {
                 dayIndex: 0,

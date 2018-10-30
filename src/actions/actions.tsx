@@ -15,7 +15,6 @@ export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay | ChangeHo
 
 export interface FetchWeather {
     type: constants.FETCH_WEATHER;
-
     (dispatch: Dispatch): object;
 }
 
@@ -35,11 +34,15 @@ export function fetchWeather() {
             .then((json) => {
                 let lat = json.lat;
                 let lon = json.lon;
+                let timezone = json.timezone;
                 fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3b0908e2927857885e7e6ef65e51e4ec`, {
                     method: 'GET'
                 })
                     .then(response => response.json())
-                    .then(json => dispatch(receiveWeather(json)));
+                    .then(json => {
+                        json.timezone = timezone;
+                        dispatch(receiveWeather(json))
+                    });
             });
     }
 }

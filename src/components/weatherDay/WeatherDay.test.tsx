@@ -11,7 +11,7 @@ import * as constants from "../../constants/constants";
 enzyme.configure({ adapter: new Adapter() });
 
 describe('Weather Day', () => {
-    let weatherDay = createElement(MockWeatherDayProps)
+    let weatherDay = createElement(MockWeatherDayProps);
 
     beforeEach(() => {
         store.clearActions();

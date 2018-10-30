@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TempScale, Weather } from '../../types/types';
 import WeatherUtils from "../../WeatherUtils";
+import './WeatherMain.css';
 
 export interface WeatherMainProps {
     city: string;
@@ -21,7 +22,7 @@ export const WeatherMain: React.SFC<WeatherMainProps> = (props) => {
                 <h6 className="card-subtitle text-muted">{formatDate(time)}</h6>
             </div>
             <div className="card-body">
-                <h1 className="card-text main-weather">
+                <h1 className="card-text main-weather d-flex justify-content-around">
                     <i className={'wi ' + getIconName(weather)}></i> {WeatherUtils.getTemperature(temperature, scale, true)}
                 </h1>
             </div>

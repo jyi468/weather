@@ -10,11 +10,12 @@ export interface WindContainerProps {
     index: number;
 }
 
-export function mapStateToProps({hourIndex}: WeatherState, {wind, index}: WindContainerProps) {
+export function mapStateToProps({hourIndex, hourOffset}: WeatherState, {wind, index}: WindContainerProps) {
     return {
         wind,
         currentHour: hourIndex,
-        index
+        index,
+        hourOffset
     };
 }
 

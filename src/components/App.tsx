@@ -54,12 +54,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
         // Transform hours to points for graph.
         return (
             <div className="container">
-                <div className="row mt-3 mb-3">
-                    <div className="col-sm-4 offset-sm-1">
-                        <h1>Weather</h1>
-                    </div>
-                </div>
-                <div className="row mb-3">
+                <div className="row mb-3 mt-5">
                     <div className="col-sm-5 offset-sm-1">
                         <WeatherMain
                             country={country}
@@ -84,7 +79,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
                         <WeatherChartContainer/>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row mb-4">
                     <div className="col-sm-1"/>
                     {days.map((day, idx) => (
                         <div className="col-sm-2">

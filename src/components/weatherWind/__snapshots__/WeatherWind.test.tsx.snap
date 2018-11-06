@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather Wind renders the component (snapshot) 1`] = `
+<li
+  className="list-inline-item"
+>
+  <div
+    className="card border-secondary"
+    onClick={[Function]}
+  >
+    <div
+      className="card-body"
+    >
+      <h5
+        className="card-title"
+      >
+        3
+         mph
+      </h5>
+      <i
+        className="mb-3 wi wi-wind towards-230-deg"
+      />
+      <h6
+        className="card-text text-center text-muted"
+      >
+        2 AM
+      </h6>
+    </div>
+  </div>
+</li>
+`;

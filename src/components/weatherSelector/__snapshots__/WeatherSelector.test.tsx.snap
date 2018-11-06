@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather Selector renders the component (snapshot) 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-header"
+  >
+    <h5
+      className="card-title"
+    >
+      Additional Information
+    </h5>
+  </div>
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-text"
+    >
+      Precipitation: 
+      0.01
+       in.
+    </h5>
+    <h5
+      className="card-text"
+    >
+      Humidity: 
+      98
+      %
+    </h5>
+    <h5
+      className="card-text"
+    >
+      Wind: 
+      2
+       mph
+    </h5>
+    <div
+      className="btn-group"
+      role="group"
+    >
+      <button
+        className="btn btn-outline-secondary"
+        id="temperature"
+        onClick={[Function]}
+        type="button"
+      >
+        Temperature
+      </button>
+      <button
+        className="btn btn-outline-secondary"
+        id="precipitation"
+        onClick={[Function]}
+        type="button"
+      >
+        Precipitation
+      </button>
+      <button
+        className="btn btn-outline-secondary"
+        id="wind"
+        onClick={[Function]}
+        type="button"
+      >
+        Wind
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db9e0dd8-5774-487f-a09b-6d1f7d6c6fcb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,14 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42447028">
+    <splitter split-orientation="horizontal" split-proportion="0.70695364">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="WeatherMain.test.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/weatherMain/WeatherMain.test.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+                <state relative-caret-position="612">
+                  <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -30,11 +31,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="actions.tsx" pinned="false" current-in-tab="false">
+          <file leaf-file-name="actions.tsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+                <state relative-caret-position="323">
+                  <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#52#0" expanded="true" />
                   </folding>
@@ -54,7 +55,7 @@
           <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/App.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="179">
+                <state relative-caret-position="1309">
                   <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
@@ -63,11 +64,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+                <state>
+                  <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -87,11 +88,11 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="WeatherMain.tsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/weatherMain/WeatherMain.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
+                <state relative-caret-position="493">
                   <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
@@ -103,8 +104,8 @@
           <file leaf-file-name="reducers.tsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/reducers/reducers.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1067">
-                  <caret line="24" column="26" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="26" />
+                <state relative-caret-position="158">
+                  <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#51#0" expanded="true" />
                   </folding>
@@ -118,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>precipitation</find>
       <find>tofixed</find>
       <find>getelementsatXaxi</find>
       <find>getElementsAtXAxis</find>
@@ -148,6 +148,7 @@
       <find>weather</find>
       <find>eathermain</find>
       <find>houroffset</find>
+      <find>http:</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -224,10 +225,10 @@
         <option value="$PROJECT_DIR$/src/components/weatherMain/WeatherMain.css" />
         <option value="$PROJECT_DIR$/src/components/weatherMain/WeatherMain.tsx" />
         <option value="$PROJECT_DIR$/src/components/App.tsx" />
-        <option value="$PROJECT_DIR$/src/actions/actions.tsx" />
         <option value="$PROJECT_DIR$/src/reducers/reducers.tsx" />
         <option value="$PROJECT_DIR$/src/components/weatherMain/WeatherMain.test.tsx" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/actions/actions.tsx" />
       </list>
     </option>
   </component>
@@ -442,7 +443,8 @@
       <workItem from="1538834564821" duration="121000" />
       <workItem from="1539031579202" duration="83727000" />
       <workItem from="1540240141378" duration="11792000" />
-      <workItem from="1540495506833" duration="22922000" />
+      <workItem from="1540495506833" duration="23858000" />
+      <workItem from="1541268240445" duration="1102000" />
     </task>
     <servers />
   </component>
@@ -470,7 +472,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135514000" />
+    <option name="totallyTimeSpent" value="137552000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -486,7 +488,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.4996986" weight="0.32923076" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49846625" visible="true" weight="0.13502109" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49846625" visible="true" weight="0.27185053" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021097" side_tool="true" weight="0.25641027" />
@@ -505,23 +507,23 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4996986" weight="0.2748718" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49846625" visible="true" weight="0.10427969" />
       <window_info id="Structure" order="1" sideWeight="0.50153375" side_tool="true" weight="0.11995178" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
       <window_info anchor="bottom" id="TypeScript" order="8" sideWeight="0.4996986" weight="0.32923076" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4996986" weight="0.32923076" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4978903" visible="true" weight="0.3425641" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021097" side_tool="true" weight="0.25641027" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4996986" weight="0.2748718" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4996986" weight="0.32923076" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -572,24 +574,20 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/actions/actions.tsx</url>
           <line>55</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/reducers/reducers.tsx</url>
           <line>75</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/weatherDay/WeatherDay.tsx</url>
           <line>17</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/reducers/reducers.tsx</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
@@ -706,9 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -746,16 +741,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.test.tsx" />
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -889,9 +875,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mocks/MockWeatherMain.tsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mocks/MockWeatherMain.tsx" />
     <entry file="file://$PROJECT_DIR$/src/containers/AppContainer.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -916,9 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="198" column="80" selection-start-line="198" selection-start-column="71" selection-end-line="198" selection-end-column="80" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -952,8 +933,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/weatherMain/WeatherMain.test.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        <state relative-caret-position="612">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -962,7 +943,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/weatherMain/WeatherMain.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
+        <state relative-caret-position="493">
           <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -970,29 +951,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
+    <entry file="file://$PROJECT_DIR$/build/index.html" />
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/reducers.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1067">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="1309">
           <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -1000,17 +969,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
+    <entry file="file://$PROJECT_DIR$/src/reducers/reducers.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="271" lean-forward="true" selection-start-column="271" selection-end-column="271" />
+        <state relative-caret-position="158">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="323">
+          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

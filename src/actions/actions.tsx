@@ -29,13 +29,13 @@ export function receiveWeather(json: object): ReceiveWeather {
 export function fetchWeather() {
 
     return (dispatch: Dispatch) => {
-        return fetch('http://ip-api.com/json') // IP based location
+        return fetch('https://ipapi.co/json') // IP based location
             .then(response => response.json())
             .then((json) => {
-                let lat = json.lat;
-                let lon = json.lon;
+                let lat = json.latitude;
+                let lon = json.longitude;
                 let timezone = json.timezone;
-                fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3b0908e2927857885e7e6ef65e51e4ec`, {
+                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3b0908e2927857885e7e6ef65e51e4ec`, {
                     method: 'GET'
                 })
                     .then(response => response.json())

@@ -188,7 +188,7 @@ export class WeatherChart extends React.Component<ChartProps, WeatherState> {
         return (
             <div>
                 <div className="card p-3" style={{display: chartType === ChartType.Wind ? 'none' : 'block'}}>
-                    <div className="card-img-top">
+                    <div className={'card-img-top ' + chartType}>
                         <canvas id="chart" width="400" height="75"></canvas>
                     </div>
                 </div>

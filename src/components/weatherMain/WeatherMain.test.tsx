@@ -15,7 +15,7 @@ describe('Weather Main', () => {
     let currentDay = days[dayIndex];
     let currentForecast = currentDay.hours[hourIndex];
 
-    let weatherDay = enzyme.shallow(<WeatherMain
+    let weatherMain = enzyme.shallow(<WeatherMain
         country={country}
         city={city}
         scale={scale}
@@ -29,23 +29,27 @@ describe('Weather Main', () => {
     });
 
     it('renders the component (snapshot)', () => {
-        expect(toJson(weatherDay)).toMatchSnapshot();
-    });
-
-    it('renders the correct date', () => {
-        expect(true).toBe(true);
-    });
-
-    it('renders the correct weather', () => {
-        expect(true).toBe(true);
-    });
-
-    it('renders the correct temperature', () => {
-        expect(true).toBe(true);
+        expect(toJson(weatherMain)).toMatchSnapshot();
     });
 
     it('renders the correct location', () => {
-        expect(true).toBe(true);
+        let element = weatherMain.find('.card-header .card-title');
+        expect(element.text()).toBe('Quinebaug, US');
+    });
+
+    it('renders the correct date', () => {
+        let element = weatherMain.find('.card-header .card-subtitle');
+        expect(element.text()).toBe('Mon Oct 29 2018');
+    });
+
+    it('renders the correct weather', () => {
+        let element = weatherMain.find('.wi-day-showers');
+        expect(element.length).toBe(1);
+    });
+
+    it('renders the correct temperature', () => {
+        let element = weatherMain.find('.card-body .card-text');
+        expect(element.text()).toBe(' 53 F°');
     });
 
 });

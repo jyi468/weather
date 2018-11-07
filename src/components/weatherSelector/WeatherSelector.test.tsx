@@ -31,4 +31,11 @@ describe('Weather Selector', () => {
         expect(toJson(weatherSelector)).toMatchSnapshot();
     });
 
+    it('renders correct precipitation, humidity and wind', () => {
+        const values = weatherSelector.find('.card-body .card-text');
+        expect(values.at(0).text()).toBe('Precipitation: 0.01 in.');
+        expect(values.at(1).text()).toBe('Humidity: 98%');
+        expect(values.at(2).text()).toBe('Wind: 2 mph');
+    });
+
 });

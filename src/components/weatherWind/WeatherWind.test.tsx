@@ -32,4 +32,19 @@ describe('Weather Wind', () => {
     it('renders the component (snapshot)', () => {
         expect(toJson(weatherWind)).toMatchSnapshot();
     });
+
+    it('renders correct speed', () => {
+        const element = weatherWind.find('.card-title');
+        expect(element.text()).toBe('3 mph');
+    });
+
+    it('renders correct icon', () => {
+        const element = weatherWind.find('.wi-wind.towards-230-deg');
+        expect(element.length).toBe(1);
+    });
+
+    it('renders correct time', () => {
+        const element = weatherWind.find('.card-text');
+        expect(element.text()).toBe('2 AM');
+    });
 });

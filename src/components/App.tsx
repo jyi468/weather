@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {ChartType, TempScale, Weather} from '../types/types';
-import {WeatherMain} from './weatherMain/WeatherMain';
 import './App.css';
 import {WeatherState} from "../types/types";
 import WeatherDayContainer from "../containers/WeatherDayContainer";
 import WeatherSelectorContainer from "../containers/WeatherSelectorContainer";
 import WeatherChartContainer from "../containers/WeatherChartContainer";
+import WeatherMainContainer from "../containers/WeatherMainContainer";
 
 export class App extends React.Component<WeatherState, WeatherState> {
 
@@ -47,7 +47,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
     }
 
     render() {
-        const {city, country, scale, days, dayIndex, hourIndex, chartType} = this.props;
+        const {days, dayIndex, hourIndex, chartType} = this.props;
         let currentDay = days[dayIndex];
         let currentForecast = currentDay.hours[hourIndex];
 
@@ -56,10 +56,7 @@ export class App extends React.Component<WeatherState, WeatherState> {
             <div className="container">
                 <div className="row mb-3 mt-5">
                     <div className="col-sm-5 offset-sm-1">
-                        <WeatherMain
-                            country={country}
-                            city={city}
-                            scale={scale}
+                        <WeatherMainContainer
                             weather={currentForecast.weather}
                             time={currentForecast.time}
                             temperature={currentForecast.temperature}

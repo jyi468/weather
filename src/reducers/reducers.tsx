@@ -1,6 +1,6 @@
 import { WeatherAction } from "../actions/actions";
 import {WeatherState, TempScale, Weather, ChartType} from '../types/types';
-import {RECEIVE_WEATHER, CHANGE_DAY, CHANGE_HOUR, CHANGE_CHART} from "../constants/constants";
+import {RECEIVE_WEATHER, CHANGE_DAY, CHANGE_HOUR, CHANGE_CHART, CHANGE_SCALE} from "../constants/constants";
 //import * as moment from 'moment';
 import * as moment from 'moment-timezone';
 
@@ -78,6 +78,8 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
             return {...state, hourIndex: action.hourIndex};
         case CHANGE_CHART:
             return {...state, chartType: action.chartType};
+        case CHANGE_SCALE:
+            return {...state, scale: action.scale};
         default:
             return state;
     }

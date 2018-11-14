@@ -1,7 +1,7 @@
 import * as constants from '../constants/constants';
 import {Dispatch} from 'redux';
 // import { data } from '../resources/mountain-view';
-import {ChartType} from "../types/types";
+import {ChartType, TempScale} from "../types/types";
 
 // Weather
 
@@ -11,7 +11,7 @@ export interface ReceiveWeather {
     json: any;
 }
 
-export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay | ChangeHour | ChangeChart; // Add other weather actions here
+export type WeatherAction = FetchWeather | ReceiveWeather | ChangeDay | ChangeHour | ChangeChart | ChangeScale; // Add other weather actions here
 
 export interface FetchWeather {
     type: constants.FETCH_WEATHER;
@@ -80,5 +80,17 @@ export function changeChart(chartType: ChartType): ChangeChart {
     return {
         type: constants.CHANGE_CHART,
         chartType
+    }
+}
+
+export interface ChangeScale {
+    type: constants.CHANGE_SCALE;
+    scale: TempScale;
+}
+
+export function changeScale(scale: TempScale): ChangeScale {
+    return {
+        type: constants.CHANGE_SCALE,
+        scale
     }
 }

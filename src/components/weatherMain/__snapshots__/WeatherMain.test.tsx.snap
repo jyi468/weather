@@ -10,7 +10,7 @@ exports[`Weather Main renders the component (snapshot) 1`] = `
     <h5
       className="card-title"
     >
-      Quinebaug, US
+      undefined, undefined
     </h5>
     <h6
       className="card-subtitle text-muted"
@@ -21,6 +21,9 @@ exports[`Weather Main renders the component (snapshot) 1`] = `
   <div
     className="card-body"
   >
+    <button>
+      Change Scale
+    </button>
     <h1
       className="card-text main-weather d-flex justify-content-around"
     >
@@ -28,7 +31,7 @@ exports[`Weather Main renders the component (snapshot) 1`] = `
         className="wi wi-day-showers"
       />
        
-      53 F°
+      284.9 K
     </h1>
   </div>
 </div>

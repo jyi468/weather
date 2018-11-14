@@ -1,5 +1,5 @@
 import * as actions from '../actions/actions';
-import {TempScale, Weather, WeatherState} from '../types/types';
+import {Weather, WeatherState} from '../types/types';
 import { Action } from 'redux';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
@@ -12,7 +12,7 @@ export interface WeatherMainContainerProps {
 }
 
 export function mapStateToProps({ country, city, scale }: WeatherState,
-                                { time, temperature, weather}: WeatherMainContainerProps) {
+                                { time, temperature, weather }: WeatherMainContainerProps) {
     return {
         country,
         city,
@@ -25,7 +25,7 @@ export function mapStateToProps({ country, city, scale }: WeatherState,
 
 export function mapDispatchToProps(dispatch: ThunkDispatch<WeatherState, void, Action>) {
     return {
-        changeHour: (scale: TempScale) => dispatch(actions.changeScale(scale))
+        toggleScale: () => dispatch(actions.toggleScale())
     }
 }
 

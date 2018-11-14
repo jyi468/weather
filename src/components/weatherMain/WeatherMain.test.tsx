@@ -11,14 +11,11 @@ enzyme.configure({ adapter: new Adapter() });
 
 describe('Weather Main', () => {
     const state: WeatherState = store.getState() as WeatherState;
-    const {city, country, scale, days, dayIndex, hourIndex} = state;
+    const {days, dayIndex, hourIndex} = state;
     let currentDay = days[dayIndex];
     let currentForecast = currentDay.hours[hourIndex];
 
     let weatherMain = enzyme.shallow(<WeatherMain
-        country={country}
-        city={city}
-        scale={scale}
         weather={currentForecast.weather}
         time={currentForecast.time}
         temperature={currentForecast.temperature}

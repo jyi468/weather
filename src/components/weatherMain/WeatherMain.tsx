@@ -2,18 +2,17 @@ import * as React from 'react';
 import { TempScale, Weather } from '../../types/types';
 import WeatherUtils from "../../WeatherUtils";
 import './WeatherMain.css';
+import {WeatherMainContainerProps} from "../../containers/WeatherMainContainer";
 
-export interface WeatherMainProps {
+export interface WeatherMainProps extends WeatherMainContainerProps {
     city: string;
     country: string;
-    scale: TempScale
-    time: number;
-    temperature: number;
-    weather: Weather;
+    scale: TempScale;
+    toggleScale: () => void;
 }
 
-export const WeatherMain: React.SFC<WeatherMainProps> = (props) => {
-    const { city, country, scale, time, temperature, weather } = props;
+export const WeatherMain: React.SFC<WeatherMainContainerProps> = (props: WeatherMainProps) => {
+    const { city, country, scale, time, temperature, weather, toggleScale } = props;
 
     return (
         <div className="card">
@@ -22,6 +21,7 @@ export const WeatherMain: React.SFC<WeatherMainProps> = (props) => {
                 <h6 className="card-subtitle text-muted">{formatDate(time)}</h6>
             </div>
             <div className="card-body">
+                <button onClick={toggleScale}>Change Scale</button>
                 <h1 className="card-text main-weather d-flex justify-content-around">
                     <i className={'wi ' + getIconName(weather)}></i> {WeatherUtils.getTemperature(temperature, scale, true)}
                 </h1>

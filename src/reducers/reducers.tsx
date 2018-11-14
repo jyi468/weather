@@ -79,7 +79,7 @@ export function weather(state: WeatherState, action: WeatherAction): WeatherStat
         case CHANGE_CHART:
             return {...state, chartType: action.chartType};
         case CHANGE_SCALE:
-            return {...state, scale: action.scale};
+            return {...state, scale: state.scale === TempScale.F ? TempScale.C: TempScale.F};
         default:
             return state;
     }

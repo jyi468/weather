@@ -6,19 +6,24 @@ import toJson from 'enzyme-to-json';
 import { store } from '../../mocks/MockWeatherState';
 import {WeatherMain} from "./WeatherMain";
 import {WeatherState} from "../../types/types";
+import * as actions from "../../actions/actions";
 
 enzyme.configure({ adapter: new Adapter() });
 
 describe('Weather Main', () => {
     const state: WeatherState = store.getState() as WeatherState;
-    const {days, dayIndex, hourIndex} = state;
+    const {city, country, scale, days, dayIndex, hourIndex} = state;
     let currentDay = days[dayIndex];
     let currentForecast = currentDay.hours[hourIndex];
 
     let weatherMain = enzyme.shallow(<WeatherMain
+        country={country}
+        city={city}
+        scale={scale}
         weather={currentForecast.weather}
         time={currentForecast.time}
         temperature={currentForecast.temperature}
+        toggleScale={() => store.dispatch(actions.toggleScale())}
     />);
 
     beforeEach(() => {

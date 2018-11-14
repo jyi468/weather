@@ -11,13 +11,13 @@ export interface WeatherMainProps extends WeatherMainContainerProps {
     toggleScale: () => void;
 }
 
-export const WeatherMain: React.SFC<WeatherMainContainerProps> = (props: WeatherMainProps) => {
+export const WeatherMain: React.SFC<WeatherMainProps> = (props: WeatherMainProps) => {
     const { city, country, scale, time, temperature, weather, toggleScale } = props;
 
     return (
         <div className="card">
             <div className="card-header">
-                <h5 className="card-title">{city + ', ' + country}</h5>
+                <h5 className="card-title">{(city || '') + ', ' + (country || '')}</h5>
                 <h6 className="card-subtitle text-muted">{formatDate(time)}</h6>
             </div>
             <div className="card-body">

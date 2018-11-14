@@ -8,7 +8,7 @@ export default class WeatherUtils {
             case TempScale.C:
                 return Math.round(temp - 273.15) + (showScale ? " C°" : "");
             default:
-                return temp.toString() + (showScale ? " K" : "");
+                return "";
         }
     }
 
